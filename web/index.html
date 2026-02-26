@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="$FLUTTER_BASE_HREF">
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>ClemicheLabs – Micro-SaaS Studio & CTO-for-Hire</title>
+  <meta name="description" content="Paris-based micro-SaaS studio and fractional CTO. We build weird but profitable products. Flutter, Firebase, AI.">
+  <meta name="keywords" content="CTO for hire, micro-SaaS, Flutter developer, Firebase, AI automation, Paris, freelance CTO">
+  <meta name="author" content="ClemicheLabs">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="ClemicheLabs – Micro-SaaS Studio & CTO-for-Hire">
+  <meta property="og:description" content="Paris-based micro-SaaS studio. Building weird but profitable products.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://clemichelabs.com">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ClemicheLabs – Micro-SaaS Studio & CTO-for-Hire">
+  <meta name="twitter:description" content="Paris-based micro-SaaS studio. Building weird but profitable products.">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="ClemicheLabs">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Dark loading screen -->
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #0f2223;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .loading {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+    .loading-text {
+      color: #00f2ff;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    .loading-spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid #162e2f;
+      border-top: 3px solid #00f2ff;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="loading">
+    <div class="loading-text">ClemicheLabs</div>
+    <div class="loading-spinner"></div>
+  </div>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>
