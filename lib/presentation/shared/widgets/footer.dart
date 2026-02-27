@@ -1,5 +1,6 @@
 import 'package:clemichelabs/core/constants/content.dart';
 import 'package:clemichelabs/core/theme/app_theme.dart';
+import 'package:clemichelabs/presentation/shared/widgets/legal_dialog.dart';
 import 'package:flutter/material.dart';
 
 class Footer extends StatelessWidget {
@@ -48,6 +49,25 @@ class Footer extends StatelessWidget {
               color: isDark
                   ? AppTheme.textMuted.withValues(alpha: 0.6)
                   : AppTheme.textMutedLight.withValues(alpha: 0.6),
+            ),
+          ),
+          const SizedBox(height: AppTheme.spacingSm),
+          MouseRegion(
+            cursor: SystemMouseCursors.click,
+            child: GestureDetector(
+              onTap: () => LegalDialog.show(context),
+              child: Text(
+                AppContent.legalLink,
+                style: theme.textTheme.bodySmall?.copyWith(
+                  color: isDark
+                      ? AppTheme.textMuted.withValues(alpha: 0.6)
+                      : AppTheme.textMutedLight.withValues(alpha: 0.6),
+                  decoration: TextDecoration.underline,
+                  decorationColor: isDark
+                      ? AppTheme.textMuted.withValues(alpha: 0.4)
+                      : AppTheme.textMutedLight.withValues(alpha: 0.4),
+                ),
+              ),
             ),
           ),
         ],

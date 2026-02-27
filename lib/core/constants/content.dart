@@ -139,8 +139,7 @@ class AppContent {
 
   // About / Founder
   static const String founderName = 'Clement';
-  static const String founderTitle =
-      'Founder & CTO — Indie Hacker, AI Builder';
+  static const String founderTitle = 'Founder & CTO — Indie Hacker, AI Builder';
   static const String founderBio =
       'Paris-based engineer with 10+ years building products '
       'at the intersection of code and creativity. '
@@ -196,10 +195,60 @@ class AppContent {
   static const String email = 'hello@clemichelabs.com';
 
   // Footer
-  static const String footerText =
-      '© 2026 ClemicheLabs. Paris, France.';
-  static const String footerTagline =
-      'Building weird but profitable products.';
+  static const String footerText = '© 2026 ClemicheLabs. Paris, France.';
+  static const String footerTagline = 'Building weird but profitable products.';
+  static const String legalLink = 'Mentions légales';
+
+  // Legal / Mentions légales
+  static const List<LegalSection> legalSections = [
+    LegalSection(
+      title: 'Éditeur du site',
+      body:
+          'Clemiche Labs (activité individuelle)\n'
+          'Nom : Clément Balanger\n'
+          'Adresse : Paris, France\n'
+          'E-mail : hello@clemichelabs.com',
+    ),
+    LegalSection(
+      title: 'Responsable de la publication',
+      body:
+          'Clément Balanger, en qualité de responsable '
+          'de l\'activité.',
+    ),
+    LegalSection(
+      title: 'Hébergement',
+      body:
+          'Hébergeur : Firebase Hosting (Google LLC)\n'
+          'Adresse : Google LLC, 1600 Amphitheatre '
+          'Parkway, Mountain View, CA 94043, USA',
+    ),
+    LegalSection(
+      title: 'Propriété intellectuelle',
+      body:
+          'Le contenu de ce site (textes, images, code, '
+          'logo) est la propriété de Clemiche Labs, sauf '
+          'mention contraire. Toute reproduction ou '
+          'redistribution non autorisée est interdite.',
+    ),
+    LegalSection(
+      title: 'Données personnelles',
+      body:
+          'Les données collectées via les formulaires '
+          '(nom, e-mail, etc.) sont utilisées uniquement '
+          'pour répondre aux demandes et communiquer sur '
+          'les produits Clemiche Labs.\n\n'
+          'Vous pouvez demander l\'accès, la rectification '
+          'ou la suppression de vos données en écrivant '
+          'à : hello@clemichelabs.com',
+    ),
+    LegalSection(
+      title: 'Cookies',
+      body:
+          'Ce site peut utiliser des cookies techniques '
+          'nécessaires à son fonctionnement. Vous pouvez '
+          'configurer votre navigateur pour les refuser.',
+    ),
+  ];
 }
 
 class ServiceItem {
@@ -254,4 +303,11 @@ class TestimonialItem {
     required this.author,
     required this.role,
   });
+}
+
+class LegalSection {
+  final String title;
+  final String body;
+
+  const LegalSection({required this.title, required this.body});
 }
