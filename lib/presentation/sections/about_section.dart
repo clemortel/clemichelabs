@@ -23,79 +23,37 @@ class AboutSection extends StatelessWidget {
   }
 
   Widget _buildDesktop(BuildContext context) {
-    final ThemeData theme = Theme.of(context);
-    final bool isDark = theme.brightness == Brightness.dark;
-
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        // Photo placeholder
         Expanded(
           flex: 2,
-          child: Container(
-            height: 400,
-            decoration: BoxDecoration(
-              color: isDark ? AppTheme.cardDark : Colors.grey.shade200,
-              borderRadius: BorderRadius.circular(AppTheme.radiusMd),
-              border: Border.all(
-                color: AppTheme.primary.withValues(alpha: 0.2),
-              ),
-            ),
-            child: Center(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Icon(
-                    Icons.person_outline,
-                    size: 64,
-                    color: AppTheme.primary.withValues(alpha: 0.3),
-                  ),
-                  const SizedBox(height: 8),
-                  Text(
-                    AppContent.founderName,
-                    style: theme.textTheme.titleLarge?.copyWith(
-                      color:
-                          isDark ? AppTheme.textMuted : AppTheme.textMutedLight,
-                    ),
-                  ),
-                ],
-              ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(AppTheme.radiusMd),
+            child: Image.asset(
+              'assets/images/photo_portrait.jpg',
+              height: 400,
+              fit: BoxFit.cover,
             ),
           ).animate().fadeIn(duration: 500.ms).slideX(begin: -0.1, end: 0),
         ),
         const SizedBox(width: AppTheme.spacingXl),
         // Bio
-        Expanded(
-          flex: 3,
-          child: _buildBioContent(context),
-        ),
+        Expanded(flex: 3, child: _buildBioContent(context)),
       ],
     );
   }
 
   Widget _buildMobile(BuildContext context) {
-    final ThemeData theme = Theme.of(context);
-    final bool isDark = theme.brightness == Brightness.dark;
-
     return Column(
       children: [
-        // Photo placeholder
-        Container(
-          height: 200,
-          width: double.infinity,
-          decoration: BoxDecoration(
-            color: isDark ? AppTheme.cardDark : Colors.grey.shade200,
-            borderRadius: BorderRadius.circular(AppTheme.radiusMd),
-            border: Border.all(
-              color: AppTheme.primary.withValues(alpha: 0.2),
-            ),
-          ),
-          child: Center(
-            child: Icon(
-              Icons.person_outline,
-              size: 48,
-              color: AppTheme.primary.withValues(alpha: 0.3),
-            ),
+        ClipRRect(
+          borderRadius: BorderRadius.circular(AppTheme.radiusMd),
+          child: Image.asset(
+            'assets/images/photo_portrait.jpg',
+            height: 200,
+            width: double.infinity,
+            fit: BoxFit.cover,
           ),
         ),
         const SizedBox(height: AppTheme.spacingLg),
@@ -111,16 +69,11 @@ class AboutSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          AppContent.founderName,
-          style: theme.textTheme.headlineMedium,
-        ),
+        Text(AppContent.founderName, style: theme.textTheme.headlineMedium),
         const SizedBox(height: 4),
         Text(
           AppContent.founderTitle,
-          style: theme.textTheme.bodyLarge?.copyWith(
-            color: AppTheme.primary,
-          ),
+          style: theme.textTheme.bodyLarge?.copyWith(color: AppTheme.primary),
         ),
         const SizedBox(height: AppTheme.spacingMd),
         Text(
@@ -136,10 +89,7 @@ class AboutSection extends StatelessWidget {
           runSpacing: 8,
           children: AppContent.founderSkills.map((String skill) {
             return Container(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 12,
-                vertical: 6,
-              ),
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
               decoration: BoxDecoration(
                 color: AppTheme.primary.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(AppTheme.radiusFull),

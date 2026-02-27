@@ -49,12 +49,24 @@ class NavBar extends ConsumerWidget {
                 onTap: () => ref
                     .read(activeSectionProvider.notifier)
                     .scrollTo(Section.hero),
-                child: Text(
-                  AppContent.brandName,
-                  style: theme.textTheme.titleMedium?.copyWith(
-                    color: AppTheme.primary,
-                    fontWeight: FontWeight.w800,
-                  ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const CircleAvatar(
+                      radius: 14,
+                      backgroundImage: AssetImage(
+                        'assets/images/photo_visage.jpg',
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    Text(
+                      AppContent.brandName,
+                      style: theme.textTheme.titleMedium?.copyWith(
+                        color: AppTheme.primary,
+                        fontWeight: FontWeight.w800,
+                      ),
+                    ),
+                  ],
                 ),
               ),
               const Spacer(),
@@ -77,8 +89,7 @@ class NavBar extends ConsumerWidget {
               const SizedBox(width: 8),
               // Theme toggle
               IconButton(
-                onPressed: () =>
-                    ref.read(themeModeProvider.notifier).toggle(),
+                onPressed: () => ref.read(themeModeProvider.notifier).toggle(),
                 icon: Icon(
                   isDark ? Icons.light_mode_outlined : Icons.dark_mode_outlined,
                   color: isDark ? AppTheme.textMuted : AppTheme.textMutedLight,
@@ -135,10 +146,9 @@ class _NavLinkState extends State<_NavLink> {
             color: widget.isActive
                 ? AppTheme.primary
                 : _hovering
-                    ? (isDark ? Colors.white : Colors.black87)
-                    : (isDark ? AppTheme.textMuted : AppTheme.textMutedLight),
-            fontWeight:
-                widget.isActive ? FontWeight.w600 : FontWeight.normal,
+                ? (isDark ? Colors.white : Colors.black87)
+                : (isDark ? AppTheme.textMuted : AppTheme.textMutedLight),
+            fontWeight: widget.isActive ? FontWeight.w600 : FontWeight.normal,
           ),
           child: Text(widget.label),
         ),
