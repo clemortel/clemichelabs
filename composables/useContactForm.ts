@@ -1,0 +1,56 @@
+import { collection, addDoc } from 'firebase/firestore'
+import type { Firestore } from 'firebase/firestore'
+
+type ContactStatus = 'idle' | 'sending' | 'sent' | 'error'
+
+interface ContactPayload {
+  readonly name: string
+  readonly email: string
+  readonly message: string
+}
+
+interface UseContactFormReturn {
+  readonly status: Ref<ContactStatus>
+  readonly errorMessage: Ref<string>
+  submit: (payload: ContactPayload) => Promise<void>
+  reset: () => void
+}
+
+export function useContactForm(): UseContactFormReturn {
+  const status: Ref<ContactStatus> = ref('idle')
+  const errorMessage: Ref<string> = ref('')
+
+  async function submit(payload: ContactPayload): Promise<void> {
+    if (status.value === 'sending') return
+
+    status.value = 'sending'
+    errorMessage.value = ''
+
+    try {
+      const { $firestore } = useNuxtApp()
+      const db: Firestore = $firestore as Firestore
+
+      await addDoc(collection(db, 'contact_submissions'), {
+        name: payload.name,
+        email: payload.email,
+        message: payload.message,
+        createdAt: new Date(),
+      })
+
+      status.value = 'sent'
+    } catch (err: unknown) {
+      status.value = 'error'
+      errorMessage.value =
+        err instanceof Error
+          ? err.message
+          : 'Something went wrong. Please try again.'
+    }
+  }
+
+  function reset(): void {
+    status.value = 'idle'
+    errorMessage.value = ''
+  }
+
+  return { status, errorMessage, submit, reset }
+}

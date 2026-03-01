@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-bg-light text-gray-900 dark:bg-bg-dark dark:text-white;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  ::selection {
+    @apply bg-primary/30;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-card-dark/80 border border-white/10 rounded-md backdrop-blur-sm;
+  }
+
+  .glass-light {
+    @apply bg-white/80 border border-black/5 rounded-md backdrop-blur-sm shadow-md;
+  }
+}
