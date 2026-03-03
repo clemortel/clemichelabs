@@ -192,3 +192,120 @@ export const legalSections: readonly LegalSection[] = [
     body: 'Ce site peut utiliser des cookies techniques n\u00E9cessaires \u00E0 son fonctionnement. Vous pouvez configurer votre navigateur pour les refuser.',
   },
 ] as const
+
+export const termsContent: readonly LegalSection[] = [
+  {
+    title: 'Agreement to Terms',
+    body: 'By accessing or using ClemicheLabs products and services (including digital templates, boilerplates, and consulting services), you agree to be bound by these Terms of Service. If you do not agree, please do not use our products.',
+  },
+  {
+    title: 'Use License',
+    body: 'Upon purchase, you receive a non-exclusive, non-transferable license to use our digital products for personal or commercial projects. You may not resell, redistribute, or claim ownership of the original templates or boilerplates.',
+  },
+  {
+    title: 'Products & Services',
+    body: 'We offer digital products (Notion templates, code boilerplates), consulting services (fractional CTO), and micro-SaaS products. All products are delivered digitally. Services are rendered remotely unless otherwise agreed.',
+  },
+  {
+    title: 'Intellectual Property',
+    body: 'All content, code, designs, and materials provided by ClemicheLabs remain our intellectual property. You receive a license to use, not ownership. You may not reverse-engineer, decompile, or extract proprietary elements for redistribution.',
+  },
+  {
+    title: 'User Responsibilities',
+    body: 'You agree to use products and services lawfully and not to violate any applicable regulations. You are responsible for maintaining the confidentiality of any access credentials provided.',
+  },
+  {
+    title: 'Limitation of Liability',
+    body: 'ClemicheLabs products and services are provided "as is" without warranties of any kind. We are not liable for any indirect, incidental, or consequential damages arising from the use or inability to use our products.',
+  },
+  {
+    title: 'Modifications to Terms',
+    body: 'We reserve the right to modify these terms at any time. Continued use of our products after changes constitutes acceptance of the updated terms.',
+  },
+  {
+    title: 'Governing Law',
+    body: 'These terms are governed by French law. Any disputes will be subject to the exclusive jurisdiction of French courts.',
+  },
+  {
+    title: 'Contact',
+    body: 'For questions about these terms, contact us at hello@clemichelabs.com',
+  },
+] as const
+
+export const privacyContent: readonly LegalSection[] = [
+  {
+    title: 'Information We Collect',
+    body: 'We collect information you provide directly (name, email, project details via contact forms) and automatically (analytics data, browser type, device information, IP address).',
+  },
+  {
+    title: 'How We Use Your Information',
+    body: 'Personal information is used to:\n• Respond to inquiries and provide customer support\n• Deliver purchased products and services\n• Send product updates and marketing communications (with consent)\n• Improve our products and user experience\n• Comply with legal obligations',
+  },
+  {
+    title: 'Data Storage & Security',
+    body: 'Your data is stored securely using Firebase/Google Cloud Platform infrastructure. We implement industry-standard security measures, but no method of transmission over the internet is 100% secure.',
+  },
+  {
+    title: 'Third-Party Services',
+    body: 'We use third-party services for analytics (Google Analytics), hosting (Firebase), and payments. These services have their own privacy policies and may collect data independently.',
+  },
+  {
+    title: 'Cookies & Tracking',
+    body: 'We use cookies and similar technologies for analytics and functionality. You can control cookie preferences through your browser settings.',
+  },
+  {
+    title: 'Data Retention',
+    body: 'We retain personal data only as long as necessary to fulfill the purposes outlined in this policy or as required by law. Contact data from inquiries is typically retained for 2 years.',
+  },
+  {
+    title: 'Your Rights (GDPR)',
+    body: 'Under GDPR, you have the right to:\n• Access your personal data\n• Rectify inaccurate data\n• Request deletion of your data\n• Object to processing\n• Data portability\n• Withdraw consent at any time\n\nTo exercise these rights, email hello@clemichelabs.com',
+  },
+  {
+    title: 'International Data Transfers',
+    body: 'Your data may be transferred to and processed in countries outside the EU (e.g., USA via Google Cloud). We ensure adequate safeguards are in place for such transfers.',
+  },
+  {
+    title: 'Changes to This Policy',
+    body: 'We may update this privacy policy periodically. Significant changes will be communicated via email or website notice.',
+  },
+  {
+    title: 'Contact',
+    body: 'For privacy-related questions or to exercise your rights, contact us at hello@clemichelabs.com',
+  },
+] as const
+
+export const refundsContent: readonly LegalSection[] = [
+  {
+    title: 'Digital Products (Templates, Boilerplates)',
+    body: 'Due to the nature of digital products, all sales are final once you have received access to the files. We cannot offer refunds for downloaded templates or boilerplates.',
+  },
+  {
+    title: 'Quality Guarantee',
+    body: 'We stand behind the quality of our products. If a digital product is defective, incomplete, or significantly misrepresented, contact us within 7 days of purchase at hello@clemichelabs.com with details. We will work to resolve the issue or provide a replacement.',
+  },
+  {
+    title: 'Consulting Services (CTO-for-Hire)',
+    body: 'Consulting services are billed based on agreed terms (hourly, project-based, or retainer). Refunds are not provided for completed work. If you are unsatisfied with ongoing work, you may terminate the engagement with 14 days notice, and will only be charged for work completed up to that point.',
+  },
+  {
+    title: 'SaaS Products',
+    body: 'For subscription-based SaaS products (if applicable), you may cancel your subscription at any time. Cancellations take effect at the end of the current billing period. No refunds are provided for partial billing periods.',
+  },
+  {
+    title: 'Exceptions',
+    body: 'Refunds may be considered on a case-by-case basis in exceptional circumstances (e.g., technical issues preventing product use, duplicate purchases). Contact hello@clemichelabs.com with your order details.',
+  },
+  {
+    title: 'Processing Time',
+    body: 'If a refund is approved, it will be processed within 7-10 business days to the original payment method.',
+  },
+  {
+    title: 'Chargebacks',
+    body: 'If you file a chargeback or payment dispute without first contacting us, your access to all ClemicheLabs products and services will be immediately revoked, and you will be banned from future purchases.',
+  },
+  {
+    title: 'Contact',
+    body: 'For refund requests or questions, email hello@clemichelabs.com with your order details and a clear explanation of the issue.',
+  },
+] as const
