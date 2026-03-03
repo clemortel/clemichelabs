@@ -5,6 +5,7 @@ import type {
   ProcessStep,
   TestimonialItem,
   LegalSection,
+  PricingItem,
 } from '~/types/content'
 
 export const brandName: string = 'ClemicheLabs'
@@ -355,5 +356,18 @@ export const refundsContent: readonly LegalSection[] = [
   {
     title: '12. Contact',
     body: 'For refund requests or questions:\nEmail: contact@clemichelabs.com\nSubject: "Refund Request"\n\nInclude your order number and a clear explanation of the issue.',
+  },
+] as const
+
+export const pricingItems: readonly PricingItem[] = [
+  {
+    name: 'Solo CTO-OS Notion Workspace',
+    price: '29€',
+    paddleProductId: 'solo-cto-os',
+  },
+  {
+    name: 'Developer Boilerplate Next.js',
+    price: '49€',
+    paddleProductId: 'nextjs-boilerplate',
   },
 ] as const

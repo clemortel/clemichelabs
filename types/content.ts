@@ -34,3 +34,9 @@ export interface LegalSection {
   readonly title: string
   readonly body: string
 }
+
+export interface PricingItem {
+  readonly name: string
+  readonly price: string
+  readonly paddleProductId: string
+}
