@@ -59,7 +59,7 @@ useHead({
                       class="rounded-md bg-primary px-4 py-2 text-sm font-semibold text-gray-900 transition-all hover:shadow-neon focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:text-bg-dark"
                       @click="() => console.log('Buy:', item.paddleProductId)"
                     >
-                      Buy Now
+                      Buy with Paddle
                     </button>
                   </td>
                 </tr>
@@ -69,6 +69,13 @@ useHead({
 
           <div class="mt-12 text-center">
             <div class="flex flex-wrap items-center justify-center gap-4 text-sm text-text-muted-light dark:text-text-muted">
+              <a
+                href="/solo-cto-os"
+                class="hover:text-primary hover:underline"
+              >
+                Solo CTO-OS
+              </a>
+              <span class="text-gray-400">•</span>
               <NuxtLink
                 to="/terms"
                 class="hover:text-primary hover:underline"

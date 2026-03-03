@@ -366,8 +366,8 @@ export const pricingItems: readonly PricingItem[] = [
     paddleProductId: 'solo-cto-os',
   },
   {
-    name: 'Developer Boilerplate Next.js',
+    name: 'CTO OS Developer Boilerplate',
     price: '49€',
-    paddleProductId: 'nextjs-boilerplate',
+    paddleProductId: 'cto-os-boilerplate',
   },
 ] as const
