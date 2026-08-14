@@ -88,6 +88,14 @@ export const projects: readonly ProjectItem[] = [
     status: 'Live',
   },
   {
+    title: 'Migrea',
+    url: 'https://migrea.fr',
+    description:
+      'Migraine tracking as a collective research protocol. Personal risk windows from sleep, cycle and pressure data — plus opt-in anonymized contribution to research teams. In open beta.',
+    tags: ['Flutter', 'Supabase', 'Health Data', 'GDPR'],
+    status: 'Live',
+  },
+  {
     title: 'CTO Operating System',
     url: null,
     description:
