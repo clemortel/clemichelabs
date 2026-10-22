@@ -10,21 +10,52 @@
   }
 
   body {
-    @apply bg-bg-light text-gray-900 dark:bg-bg-dark dark:text-white;
-    font-family: 'Space Grotesk', sans-serif;
+    @apply bg-paper font-sans text-ink dark:bg-paper-dark dark:text-ink-dark;
+    font-feature-settings: 'kern', 'liga';
   }
 
   ::selection {
-    @apply bg-primary/30;
+    @apply bg-accent/20 dark:bg-accent-dark/30;
+  }
+
+  :focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-accent dark:outline-accent-dark;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
   }
 }
 
 @layer components {
-  .glass {
-    @apply bg-card-dark/80 border border-white/10 rounded-md backdrop-blur-sm;
+  .text-soft {
+    @apply text-muted dark:text-muted-dark;
   }
 
-  .glass-light {
-    @apply bg-white/80 border border-black/5 rounded-md backdrop-blur-sm shadow-md;
+  .link {
+    @apply underline decoration-rule decoration-1 underline-offset-4
+      transition-colors hover:text-accent hover:decoration-accent
+      dark:decoration-rule-dark dark:hover:text-accent-dark
+      dark:hover:decoration-accent-dark;
+  }
+
+  .label {
+    @apply font-mono text-xs uppercase tracking-[0.08em] text-muted
+      dark:text-muted-dark;
+  }
+
+  .button-primary {
+    @apply inline-flex items-center gap-2 rounded-sm bg-ink px-5 py-3
+      text-sm font-medium text-paper transition-colors hover:bg-accent
+      dark:bg-ink-dark dark:text-paper-dark dark:hover:bg-accent-dark;
+  }
+
+  .field {
+    @apply w-full rounded-sm border border-rule bg-transparent px-4 py-3
+      text-ink outline-none transition-colors placeholder:text-muted
+      focus:border-ink dark:border-rule-dark dark:text-ink-dark
+      dark:placeholder:text-muted-dark dark:focus:border-ink-dark;
   }
 }

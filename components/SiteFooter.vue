@@ -1,27 +1,28 @@
 <script setup lang="ts">
-import { brandName, footerTagline, footerText, legalLink } from '~/data/content'
+import {
+  footerCopyright,
+  footerIdentity,
+  footerLinks,
+} from '~/data/content'
 </script>
 
 <template>
-  <footer
-    class="border-t border-white/5 px-5 py-12 text-center sm:px-10 md:px-20"
-  >
-    <div class="mx-auto max-w-content">
-      <p class="mb-2 text-lg font-bold text-gray-900 dark:text-white">
-        {{ brandName }}
-      </p>
-      <p class="mb-4 text-sm text-text-muted-light dark:text-text-muted">
-        {{ footerTagline }}
-      </p>
-      <p class="mb-2 text-xs text-text-muted-light dark:text-text-muted">
-        {{ footerText }}
-      </p>
-      <NuxtLink
-        to="/legal"
-        class="text-xs text-primary underline-offset-4 hover:underline"
-      >
-        {{ legalLink }}
-      </NuxtLink>
+  <footer class="border-t border-rule dark:border-rule-dark">
+    <div
+      class="mx-auto flex max-w-content flex-col gap-4 px-5 py-10 text-sm text-soft sm:px-8 md:flex-row md:items-center md:justify-between"
+    >
+      <p>{{ footerIdentity }}</p>
+      <div class="flex flex-wrap items-center gap-x-5 gap-y-2">
+        <NuxtLink
+          v-for="item in footerLinks"
+          :key="item.href"
+          :to="item.href"
+          class="link"
+        >
+          {{ item.label }}
+        </NuxtLink>
+        <span class="font-mono text-xs">{{ footerCopyright }}</span>
+      </div>
     </div>
   </footer>
 </template>

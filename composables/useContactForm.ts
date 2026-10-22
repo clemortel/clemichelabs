@@ -39,11 +39,10 @@ export function useContactForm(): UseContactFormReturn {
 
       status.value = 'sent'
     } catch (err: unknown) {
+      // The UI shows a human fallback; keep the raw error for debugging.
+      console.error(err)
       status.value = 'error'
-      errorMessage.value =
-        err instanceof Error
-          ? err.message
-          : 'Something went wrong. Please try again.'
+      errorMessage.value = ''
     }
   }
 
