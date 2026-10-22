@@ -9,7 +9,6 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
-    '@nuxtjs/google-fonts',
     '@nuxt/image',
     '@nuxt/icon',
     '@vueuse/nuxt',
@@ -28,29 +27,29 @@ export default defineNuxtConfig({
   app: {
     head: {
       htmlAttrs: { lang: 'fr' },
-      title: 'Clément Balanger — Ingénieur produit freelance, Flutter et IA, Paris',
+      title: 'Clément Balanger — Tech lead Flutter freelance, Paris',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         {
           name: 'description',
           content:
-            "Ingénieur produit et tech lead Flutter à Paris. Scan sécurité Supabase ou Firebase, audit prêt pour la production, fonctionnalités IA : au forfait, une mission à la fois.",
+            'Tech lead Flutter freelance à Paris : mise à jour des apps pour les stores (Android 16, Xcode 26), audit, sécurisation Supabase ou Firebase, fonctionnalités IA. Au forfait, pour les professionnels.',
         },
         { name: 'author', content: 'Clément Balanger' },
-        { name: 'theme-color', content: '#f6f3ec' },
+        { name: 'theme-color', content: '#fcfcfb' },
         // Open Graph
         { property: 'og:type', content: 'website' },
         { property: 'og:locale', content: 'fr_FR' },
         { property: 'og:url', content: 'https://clemichelabs.com' },
         {
           property: 'og:title',
-          content: 'Clément Balanger — Ingénieur produit, Flutter et IA',
+          content: 'Clément Balanger — Tech lead Flutter freelance',
         },
         {
           property: 'og:description',
           content:
-            'Des idées et des prototypes transformés en apps qui tournent en production. Au forfait, une mission à la fois.',
+            'Mise à jour des apps Flutter pour les stores, audit, sécurisation Supabase ou Firebase, fonctionnalités IA. Au forfait.',
         },
         {
           property: 'og:image',
@@ -60,12 +59,12 @@ export default defineNuxtConfig({
         { name: 'twitter:card', content: 'summary' },
         {
           name: 'twitter:title',
-          content: 'Clément Balanger — Ingénieur produit, Flutter et IA',
+          content: 'Clément Balanger — Tech lead Flutter freelance',
         },
         {
           name: 'twitter:description',
           content:
-            'Des idées et des prototypes transformés en apps qui tournent en production. Au forfait, une mission à la fois.',
+            'Mise à jour des apps Flutter pour les stores, audit, sécurisation Supabase ou Firebase, fonctionnalités IA. Au forfait.',
         },
         {
           name: 'twitter:image',
@@ -83,16 +82,6 @@ export default defineNuxtConfig({
     classSuffix: '',
     preference: 'system',
     fallback: 'light',
-  },
-
-  googleFonts: {
-    families: {
-      Newsreader: { wght: [400, 500], ital: [400] },
-      'IBM Plex Sans': [400, 500, 600],
-      'IBM Plex Mono': [400, 500],
-    },
-    display: 'swap',
-    download: true,
   },
 
   sitemap: {

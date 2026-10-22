@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import {
   aboutParagraphs,
+  aboutSkillsLabel,
+  aboutTimelineLabel,
   aboutTitle,
   photoAlt,
   skillGroups,
@@ -9,7 +11,7 @@ import {
 </script>
 
 <template>
-  <SectionBlock id="a-propos" index="04" label="À propos" :title="aboutTitle">
+  <SectionBlock id="a-propos" :title="aboutTitle">
     <div class="grid gap-12 md:grid-cols-[1fr_15rem]">
       <div class="max-w-prose space-y-5 leading-relaxed">
         <p v-for="paragraph in aboutParagraphs" :key="paragraph">
@@ -30,14 +32,14 @@ import {
 
     <div class="mt-16 grid gap-12 md:grid-cols-2">
       <div>
-        <h3 class="label mb-4">Parcours</h3>
+        <h3 class="label mb-3">{{ aboutTimelineLabel }}</h3>
         <ul class="divide-y divide-rule text-sm dark:divide-rule-dark">
           <li
             v-for="item in timeline"
             :key="item.period + item.place"
             class="grid grid-cols-[6.5rem_1fr] gap-4 py-3"
           >
-            <span class="font-mono text-xs leading-6 text-soft">
+            <span class="text-sm text-soft">
               {{ item.period }}
             </span>
             <span>
@@ -48,14 +50,14 @@ import {
         </ul>
       </div>
       <div>
-        <h3 class="label mb-4">Outils</h3>
+        <h3 class="label mb-3">{{ aboutSkillsLabel }}</h3>
         <dl class="divide-y divide-rule text-sm dark:divide-rule-dark">
           <div
             v-for="group in skillGroups"
             :key="group.label"
             class="grid grid-cols-[6.5rem_1fr] gap-4 py-3"
           >
-            <dt class="font-mono text-xs leading-6 text-soft">
+            <dt class="text-sm text-soft">
               {{ group.label }}
             </dt>
             <dd>{{ group.items.join(', ') }}</dd>

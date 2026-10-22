@@ -1,33 +1,42 @@
 import type { Config } from 'tailwindcss'
 
+const systemSans: string[] = [
+  'ui-sans-serif',
+  '-apple-system',
+  'BlinkMacSystemFont',
+  '"Segoe UI"',
+  'Roboto',
+  '"Helvetica Neue"',
+  'Arial',
+  'sans-serif',
+]
+
 export default {
   darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        paper: '#f6f3ec',
-        'paper-dark': '#141311',
-        surface: '#ede8dd',
-        'surface-dark': '#1d1b18',
-        ink: '#1c1b18',
-        'ink-dark': '#ece8df',
-        muted: '#6b665c',
-        'muted-dark': '#9d978b',
-        rule: '#d9d2c3',
-        'rule-dark': '#2e2b26',
+        paper: '#fcfcfb',
+        'paper-dark': '#121212',
+        surface: '#f2f2ef',
+        'surface-dark': '#1c1c1b',
+        ink: '#161616',
+        'ink-dark': '#ececea',
+        muted: '#5c5c57',
+        'muted-dark': '#a3a39d',
+        rule: '#e2e2de',
+        'rule-dark': '#2a2a28',
         accent: '#b33a0b',
         'accent-dark': '#f08a5d',
         success: '#2f6b3f',
         error: '#b42318',
       },
       fontFamily: {
-        serif: ['Newsreader', 'Georgia', 'serif'],
-        sans: ['"IBM Plex Sans"', 'system-ui', 'sans-serif'],
-        mono: ['"IBM Plex Mono"', 'ui-monospace', 'monospace'],
+        sans: systemSans,
       },
       borderRadius: {
-        sm: '3px',
-        md: '6px',
+        sm: '4px',
+        md: '8px',
       },
       screens: {
         sm: '600px',
@@ -35,7 +44,7 @@ export default {
         lg: '1200px',
       },
       maxWidth: {
-        content: '1080px',
+        content: '1000px',
         prose: '660px',
       },
     },

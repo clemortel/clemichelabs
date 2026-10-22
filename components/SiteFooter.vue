@@ -21,7 +21,7 @@ import {
         >
           {{ item.label }}
         </NuxtLink>
-        <span class="font-mono text-xs">{{ footerCopyright }}</span>
+        <span class="text-xs">{{ footerCopyright }}</span>
       </div>
     </div>
   </footer>

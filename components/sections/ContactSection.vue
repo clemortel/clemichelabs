@@ -30,13 +30,13 @@ function handleReset(): void {
 </script>
 
 <template>
-  <SectionBlock id="contact" index="06" label="Contact" :title="contactTitle">
+  <SectionBlock id="contact" :title="contactTitle">
     <div class="grid gap-14 md:grid-cols-[1fr_1.1fr]">
       <div class="max-w-prose">
         <p class="leading-relaxed text-soft">{{ contactSub }}</p>
         <a
           :href="`mailto:${email}`"
-          class="link mt-8 inline-block font-serif text-2xl md:text-3xl"
+          class="link mt-8 inline-block text-xl font-semibold md:text-2xl"
         >
           {{ email }}
         </a>
@@ -50,7 +50,7 @@ function handleReset(): void {
       </div>
 
       <div v-if="status === 'sent'" class="border-l-2 border-success pl-6">
-        <p class="font-serif text-2xl">{{ formLabels.sentTitle }}</p>
+        <p class="text-xl font-semibold">{{ formLabels.sentTitle }}</p>
         <p class="mt-2 text-soft">{{ formLabels.sentBody }}</p>
         <button type="button" class="link mt-6 text-sm" @click="handleReset">
           {{ formLabels.sendAnother }}
@@ -112,6 +112,10 @@ function handleReset(): void {
         >
           {{ status === 'sending' ? formLabels.sending : formLabels.submit }}
         </button>
+        <p class="text-xs text-soft">
+          {{ formLabels.privacyNote }}
+          <NuxtLink to="/privacy" class="link">{{ formLabels.privacyLinkLabel }}</NuxtLink>.
+        </p>
       </form>
     </div>
   </SectionBlock>

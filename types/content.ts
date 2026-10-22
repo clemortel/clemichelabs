@@ -3,11 +3,6 @@ export interface NavLink {
   readonly href: string
 }
 
-export interface HeroFact {
-  readonly value: string
-  readonly label: string
-}
-
 export interface OfferItem {
   readonly id: string
   readonly title: string
@@ -67,6 +62,8 @@ export interface FormLabels {
   readonly sentBody: string
   readonly sendAnother: string
   readonly errorFallback: string
+  readonly privacyNote: string
+  readonly privacyLinkLabel: string
 }
 
 export interface LegalSection {
@@ -74,8 +71,26 @@ export interface LegalSection {
   readonly body: string
 }
 
-export interface PricingItem {
-  readonly name: string
-  readonly price: string
-  readonly paddleProductId: string
+/** Copy for a single-offer landing page (see OfferLanding.vue). */
+export interface OfferLandingContent {
+  readonly path: string
+  readonly metaTitle: string
+  readonly metaDescription: string
+  readonly eyebrow: string
+  readonly headline: string
+  readonly intro: string
+  readonly cta: string
+  readonly mailSubject: string
+  readonly priceLine: string
+  readonly problemTitle: string
+  readonly problem: readonly string[]
+  readonly sources: readonly ExternalLink[]
+  readonly checksTitle: string
+  readonly checks: readonly SkillGroup[]
+  readonly deliverablesTitle: string
+  readonly deliverables: readonly string[]
+  readonly stepsTitle: string
+  readonly steps: readonly MethodStep[]
+  readonly limits: string | null
+  readonly otherOffers: string
 }
