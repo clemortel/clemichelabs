@@ -36,3 +36,7 @@
 - Site: https://clemichelabs.com
 - LinkedIn: https://www.linkedin.com/in/clementbalanger
 - GitHub: https://github.com/clemortel
+
+## Pages
+
+- Security scan offer (French): https://clemichelabs.com/scan-securite

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { OfferItem } from '~/types/content'
+import { offerDetailsLabel } from '~/data/content'
 
 interface Props {
   offer: OfferItem
@@ -36,6 +37,13 @@ defineProps<Props>()
       <p v-if="offer.note" class="mt-4 text-sm leading-relaxed text-soft">
         {{ offer.note }}
       </p>
+      <NuxtLink
+        v-if="offer.detailsHref"
+        :to="offer.detailsHref"
+        class="link mt-4 inline-block text-sm"
+      >
+        {{ offerDetailsLabel }} →
+      </NuxtLink>
     </div>
   </article>
 </template>

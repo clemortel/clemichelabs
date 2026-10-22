@@ -71,6 +71,7 @@ export const offers: readonly OfferItem[] = [
     price: '590\u00A0€',
     duration: '1 semaine',
     note: null,
+    detailsHref: '/scan-securite',
   },
   {
     id: 'audit',
@@ -88,6 +89,7 @@ export const offers: readonly OfferItem[] = [
     price: '1\u00A0500\u00A0€',
     duration: '2 semaines',
     note: 'Déduit du forfait de reprise si vous me la confiez.',
+    detailsHref: null,
   },
   {
     id: 'ia',
@@ -105,8 +107,10 @@ export const offers: readonly OfferItem[] = [
     price: '900\u00A0€',
     duration: 'Cadrage, 1 semaine',
     note: 'Puis intégration au forfait, dès 5\u00A0000\u00A0€. Le cadrage est déduit si vous poursuivez.',
+    detailsHref: null,
   },
 ] as const
+export const offerDetailsLabel: string = 'Le détail'
 export const offersFootnotes: readonly string[] = [
   'Agence ou studio\u00A0? Je prends aussi de la sous-traitance Flutter au forfait, en marque blanche.',
   'Équipe de développeurs\u00A0? J’installe des workflows de développement par agents (Claude Code)\u00A0: règles projet, skills, revues automatisées.',

@@ -17,6 +17,7 @@ export interface OfferItem {
   readonly price: string
   readonly duration: string
   readonly note: string | null
+  readonly detailsHref: string | null
 }
 
 export interface WorkItem {
