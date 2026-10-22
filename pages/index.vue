@@ -33,7 +33,7 @@ useHead({
             '@type': 'Person',
             '@id': `${siteUrl}/#clement`,
             name: personName,
-            jobTitle: 'Ingénieur produit, tech lead Flutter',
+            jobTitle: 'Tech lead Flutter freelance',
             url: siteUrl,
             email: `mailto:${email}`,
             image: `${siteUrl}/images/photo_visage.jpg`,
