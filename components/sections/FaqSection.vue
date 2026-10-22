@@ -3,7 +3,7 @@ import { faqItems, faqTitle } from '~/data/content'
 </script>
 
 <template>
-  <SectionBlock id="questions" index="05" label="Questions" :title="faqTitle">
+  <SectionBlock id="questions" :title="faqTitle">
     <div class="max-w-prose divide-y divide-rule border-y border-rule dark:divide-rule-dark dark:border-rule-dark">
       <details
         v-for="item in faqItems"
@@ -11,11 +11,11 @@ import { faqItems, faqTitle } from '~/data/content'
         class="group py-5"
       >
         <summary
-          class="flex cursor-pointer list-none items-baseline justify-between gap-6 font-serif text-lg [&::-webkit-details-marker]:hidden"
+          class="flex cursor-pointer list-none items-baseline justify-between gap-6 font-medium [&::-webkit-details-marker]:hidden"
         >
           {{ item.question }}
           <span
-            class="font-mono text-sm text-soft transition-transform group-open:rotate-45"
+            class="text-soft transition-transform group-open:rotate-45"
             aria-hidden="true"
           >+</span>
         </summary>

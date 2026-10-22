@@ -1,6 +1,6 @@
 # ClemicheLabs – Portfolio Website
 
-> Freelance site of Clément Balanger (product engineer, Flutter + AI).
+> Freelance site of Clément Balanger (Flutter tech lead, fixed-price missions).
 > Nuxt 3 SSG on Firebase Hosting + client-side Firestore contact form.
 
 ---
@@ -9,7 +9,7 @@
 
 **Nuxt 3 / Vue 3 / TypeScript / Tailwind CSS / Firebase (Hosting, Firestore)**
 
-Modules: `@nuxtjs/tailwindcss`, `@nuxtjs/color-mode`, `@nuxtjs/google-fonts`, `@nuxt/image`, `@nuxt/icon`, `@vueuse/nuxt`, `@nuxtjs/sitemap`
+Modules: `@nuxtjs/tailwindcss`, `@nuxtjs/color-mode`, `@nuxt/image`, `@nuxt/icon`, `@vueuse/nuxt`, `@nuxtjs/sitemap`
 
 ---
 
@@ -22,14 +22,15 @@ clemichelabs/
 ├── app.vue                        # Root layout
 ├── pages/
 │   ├── index.vue                  # Home: sections + JSON-LD (Person, offers)
-│   ├── legal|terms|privacy|refunds.vue  # Thin wrappers on LegalDocument
-│   ├── pricing.vue                # Paddle digital products
-│   └── solo-cto-os.vue
+│   ├── flutter-a-jour.vue         # Store-update offer (OfferLanding)
+│   ├── securite.vue               # Supabase/Firebase offer (OfferLanding)
+│   └── legal|privacy.vue          # Thin wrappers on LegalDocument
 ├── components/
 │   ├── PageShell.vue              # Header + main + footer
 │   ├── SiteHeader.vue             # Name, anchor nav, theme toggle
 │   ├── SiteFooter.vue
-│   ├── SectionBlock.vue           # "01 — Label" column + serif title + slot
+│   ├── SectionBlock.vue           # Section with title + slot
+│   ├── OfferLanding.vue           # Single-offer landing page layout
 │   ├── LegalDocument.vue          # Shared legal page layout
 │   ├── sections/                  # Hero, Offers, Work, Method, About, Faq, Contact
 │   └── cards/                     # OfferRow, WorkEntry
@@ -39,8 +40,8 @@ clemichelabs/
 │   └── firebase.client.ts         # Firebase client SDK init (client-only)
 ├── data/
 │   ├── content.ts                 # All home copy (French)
-│   ├── legal.ts                   # Legal, terms, privacy, refunds
-│   └── products.ts                # Paddle products
+│   ├── landings.ts                # Copy of the offer landing pages
+│   └── legal.ts                   # Legal notice and privacy
 ├── types/
 │   └── content.ts                 # TypeScript interfaces
 ├── assets/css/
@@ -61,17 +62,19 @@ UI (Vue component) → composable → Firebase client SDK → Firestore
 
 ## Design System
 
-Editorial, text-first: paper background, ink text, one accent, no gradients,
-glows, glass cards or icon grids. It must not look AI-generated.
+Plain developer site, text-first: near-white background, system sans font,
+one accent, no gradients, glows, glass cards, icon grids, numbered section
+labels or web fonts. It must not look AI-generated or like a template.
 
 | Token | Tailwind class | Light / Dark |
 |-------|---------------|-------|
-| Paper | `bg-paper` / `dark:bg-paper-dark` | `#f6f3ec` / `#141311` |
-| Ink | `text-ink` / `dark:text-ink-dark` | `#1c1b18` / `#ece8df` |
-| Muted | `text-soft` (component class) | `#6b665c` / `#9d978b` |
-| Rule | `border-rule` / `dark:border-rule-dark` | `#d9d2c3` / `#2e2b26` |
+| Paper | `bg-paper` / `dark:bg-paper-dark` | `#fcfcfb` / `#121212` |
+| Surface | `bg-surface` / `dark:bg-surface-dark` | `#f2f2ef` / `#1c1c1b` |
+| Ink | `text-ink` / `dark:text-ink-dark` | `#161616` / `#ececea` |
+| Muted | `text-soft` (component class) | `#5c5c57` / `#a3a39d` |
+| Rule | `border-rule` / `dark:border-rule-dark` | `#e2e2de` / `#2a2a28` |
 | Accent | `text-accent` / `dark:text-accent-dark` | `#b33a0b` / `#f08a5d` |
-| Fonts | `font-serif` / `font-sans` / `font-mono` | Newsreader / IBM Plex Sans / IBM Plex Mono |
+| Font | `font-sans` | System UI stack (no web fonts) |
 
 Component classes in `main.css`: `.link`, `.label`, `.button-primary`,
 `.field`, `.text-soft`. Always use tokens; never hardcode colors.
@@ -88,8 +91,10 @@ Component classes in `main.css`: `.link`, `.label`, `.button-primary`,
 - Keep files ~200 lines; extract components when larger
 - Use `@nuxtjs/color-mode` for dark/light — never manual class toggling
 - No scroll animations; native `<details>` for the FAQ
-- Never name the employer (mobility startup) or show its logo until the
-  contract amendment allows it
+- Never name the employer, its app, its user figures or its logo until
+  the contract amendment allows it ("tech lead mobile dans une startup")
+- Offers are B2B only; security work is a configuration review, never
+  sold as a penetration test or a guarantee
 - Components use `pathPrefix: false` — no directory prefix needed
 
 ---
@@ -125,5 +130,6 @@ npm run deploy
 
 ## Content Editing
 
-All site copy lives in `data/content.ts`. Edit there to update:
-- Taglines, stats, services, projects, process steps, testimonials, founder bio
+All copy lives in `data/content.ts` (home), `data/landings.ts` (offer
+pages) and `data/legal.ts`. Offers and prices must match Jarvis
+`Volets/Freelance.md`. Removed URLs are redirected in `firebase.json`.

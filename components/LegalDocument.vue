@@ -17,12 +17,12 @@ defineProps<Props>()
         <NuxtLink to="/" class="link text-sm text-soft">
           ← {{ backHomeLabel }}
         </NuxtLink>
-        <h1 class="mb-12 mt-8 font-serif text-4xl tracking-tight md:text-5xl">
+        <h1 class="mb-10 mt-8 text-3xl font-semibold tracking-tight md:text-4xl">
           {{ title }}
         </h1>
         <div class="space-y-10">
           <section v-for="section in sections" :key="section.title">
-            <h2 class="mb-3 font-serif text-xl">
+            <h2 class="mb-2 text-lg font-semibold">
               {{ section.title }}
             </h2>
             <p class="whitespace-pre-line text-sm leading-relaxed text-soft">

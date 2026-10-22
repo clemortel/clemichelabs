@@ -1,6 +1,5 @@
 import type {
   NavLink,
-  HeroFact,
   OfferItem,
   WorkItem,
   MethodStep,
@@ -16,7 +15,7 @@ export const personName: string = 'Clément Balanger'
 export const siteUrl: string = 'https://clemichelabs.com'
 
 export const siteDescription: string =
-  'Ingénieur produit et tech lead Flutter à Paris. Scan sécurité Supabase ou Firebase, audit prêt pour la production, fonctionnalités IA\u00A0: au forfait, une mission à la fois.'
+  'Tech lead Flutter freelance à Paris : mise à jour des apps pour les stores (Android 16, Xcode 26), audit, sécurisation Supabase ou Firebase, fonctionnalités IA. Au forfait, pour les professionnels.'
 
 export const navLinks: readonly NavLink[] = [
   { label: 'Offres', href: '/#offres' },
@@ -27,114 +26,114 @@ export const navLinks: readonly NavLink[] = [
 export const navContact: NavLink = { label: 'Contact', href: '/#contact' }
 
 // Hero
-export const heroEyebrow: string = 'Ingénieur produit · Tech lead · Paris'
-export const heroAvailability: string = 'Une mission à la fois, au forfait'
-export const heroTitleLead: string = 'Je transforme des idées et des prototypes'
-export const heroTitleEmphasis: string = 'en apps qui tournent en production.'
+export const heroEyebrow: string = 'Tech lead Flutter · Paris · au forfait'
+export const heroTitleLead: string = 'Je mets à jour, je sécurise et je fais avancer'
+export const heroTitleEmphasis: string =
+  'les apps Flutter que personne n’a le temps de reprendre.'
 export const heroIntro: string =
-  'Tech lead Flutter, j’ai été le premier développeur d’une app de mobilité utilisée chaque jour par 2\u00A0500 chauffeurs, et j’ai cofondé Diseed, une app sociale avec de l’IA en production. J’aide les startups et les PME à livrer un produit fiable, ou à y ajouter de l’IA qui sert vraiment.'
-export const heroPrimaryCta: string = 'Parlons de votre produit'
+  'Développeur depuis 2019, tech lead mobile dans une startup parisienne depuis 2024, cofondateur de Diseed, une app sociale avec des modèles de langage en production. Je prends des missions courtes et asynchrones, au forfait, réservées aux professionnels.'
+export const heroPrimaryCta: string = 'Écrire'
 export const heroSecondaryCta: string = 'Voir les offres et les prix'
-
-export const heroFacts: readonly HeroFact[] = [
-  {
-    value: '2\u00A0500',
-    label: 'chauffeurs utilisent chaque jour l’app mobile que j’ai construite',
-  },
-  {
-    value: '3',
-    label: 'produits lancés en propre\u00A0: Diseed, Migrea, LineUpVote',
-  },
-  {
-    value: '24\u00A0h',
-    label: 'pour vous répondre, même pour dire non',
-  },
-] as const
+export const heroNoticeLabel: string = 'En ce moment'
+export const heroNotice: string =
+  'Depuis le 31 août 2026, Google Play refuse les mises à jour qui ne ciblent pas Android 16 (API 36), et les dernières prolongations expirent le 1er novembre. Côté Apple, Xcode 26 est obligatoire depuis le 28 avril.'
+export const heroNoticeLink: ExternalLink = {
+  label: 'Ce que je fais pour une app Flutter',
+  href: '/flutter-a-jour',
+}
 
 // Offers
-export const offersTitle: string =
-  'Trois portes d’entrée, chacune avec un prix annoncé.'
+export const offersTitle: string = 'Quatre offres, chacune avec son prix.'
 export const offers: readonly OfferItem[] = [
   {
-    id: 'scan',
-    title: 'Scan sécurité Supabase ou Firebase',
+    id: 'stores',
+    title: 'Mise à jour Flutter pour les stores',
     forWho:
-      'Votre app est en ligne, construite vite (parfois avec Lovable, Bolt ou FlutterFlow), et personne n’a vérifié qui peut lire quoi dans votre base.',
+      'Votre app Flutter n’a pas bougé depuis des mois, et Google Play ou l’App Store refusent désormais vos nouvelles versions.',
     description:
-      'Je passe en revue les règles d’accès aux données, l’authentification, les clés exposées et le stockage de fichiers. Vous recevez la liste des failles classées par gravité, avec le correctif de chacune.',
+      'Je mets l’app aux exigences actuelles des stores et je remets les dépendances à jour. Vous récupérez un projet qui compile, testé sur appareil, avec des builds prêts à soumettre.',
     deliverables: [
-      'Revue des règles d’accès (RLS, règles Firestore et Storage)',
-      'Authentification, clés et secrets exposés côté client',
-      'Failles classées par gravité, correctif pour chacune',
-      'Corrections les plus urgentes faites avec vous si vous le souhaitez',
+      'Cible Android 16 (API 36) et build avec Xcode 26',
+      'Flutter et dépendances à jour, CocoaPods remplacé par Swift Package Manager si besoin',
+      'Builds de test envoyés sur les deux stores',
+      'Rapport de ce qui a changé et de ce qui reste à surveiller',
     ],
-    price: '590\u00A0€',
-    duration: '1 semaine',
-    note: null,
-    detailsHref: '/scan-securite',
+    price: '1 200 €',
+    duration: '2 semaines',
+    note: 'Par app, jusqu’à 25 dépendances. Agences : 3 apps pour 3 000 €.',
+    detailsHref: '/flutter-a-jour',
   },
   {
     id: 'audit',
-    title: 'Audit «\u00A0prêt pour la production\u00A0»',
+    title: 'Audit « prêt pour la production »',
     forWho:
       'Votre app Flutter ou votre prototype rame, plante ou n’avance plus, et vous voulez comprendre pourquoi avant de dépenser plus.',
     description:
-      'Je lis le code, je fais tourner l’app, je regarde la CI et les stores. Vous repartez avec un diagnostic clair et un plan de reprise chiffré. Si vous me confiez la reprise, je la mène au forfait, jalon par jalon.',
+      'Je lis le code, je fais tourner l’app, je regarde la CI et les stores. Vous repartez avec un diagnostic écrit et un plan de reprise chiffré. Si vous me confiez la reprise, je la mène au forfait, jalon par jalon.',
     deliverables: [
-      'Rapport écrit\u00A0: architecture, performances, sécurité, tests, CI, publication',
+      'Rapport écrit : architecture, performances, sécurité, tests, CI, publication',
       'Risques classés par urgence',
       'Plan de reprise chiffré, jalon par jalon',
       'Restitution de 45 minutes en visio',
     ],
-    price: '1\u00A0500\u00A0€',
+    price: '1 500 €',
     duration: '2 semaines',
     note: 'Déduit du forfait de reprise si vous me la confiez.',
     detailsHref: null,
   },
   {
+    id: 'securite',
+    title: 'Sécurisation Supabase ou Firebase',
+    forWho:
+      'Votre app tourne sur votre propre projet Supabase ou Firebase, elle a été construite vite, et un client ou un investisseur vous demande où en sont vos données.',
+    description:
+      'Je relis la configuration sur une liste de points précise, je corrige directement dans votre dépôt ce qui doit l’être, puis je vérifie à nouveau. C’est une revue de configuration à date, pas un test d’intrusion.',
+    deliverables: [
+      'Règles d’accès relues : RLS, règles Firestore et Storage',
+      'Authentification, clés et secrets côté client',
+      'Corrections faites dans votre dépôt, puis vérifiées',
+      'Rapport court : ce qui était ouvert, ce qui est fermé, ce qui reste à surveiller',
+    ],
+    price: '890 €',
+    duration: '2 semaines',
+    note: 'Sur autorisation écrite et accord de confidentialité.',
+    detailsHref: '/securite',
+  },
+  {
     id: 'ia',
     title: 'Une fonctionnalité IA dans votre produit',
     forWho:
-      'Vous voulez un assistant, une recherche intelligente, une extraction de documents ou une catégorisation automatique, sans transformer votre app en démo.',
+      'Vous voulez un assistant, une recherche, une extraction de documents ou une catégorisation automatique qui tienne en production.',
     description:
-      'On commence par un cadrage court\u00A0: ce que l’IA doit faire, comment on saura qu’elle le fait bien, et ce que ça coûtera par utilisateur. Ensuite je l’intègre à votre app ou à votre back-end, avec des critères d’acceptation écrits et un plafond de coût.',
+      'On commence par un cadrage court : ce que l’IA doit faire, comment mesurer qu’elle le fait bien, et ce que ça coûtera par utilisateur. Ensuite je l’intègre à votre app ou à votre back-end, avec des critères d’acceptation écrits et un plafond de coût.',
     deliverables: [
-      'Cadrage\u00A0: cas d’usage, choix du modèle, jeu d’évaluation, coût estimé',
+      'Cadrage : cas d’usage, choix du modèle, jeu d’évaluation, coût estimé',
       'Fonction intégrée, testée et en production',
+      'Information des utilisateurs exigée par l’AI Act',
       'Suivi de la qualité et du coût par requête',
-      'Documentation pour votre équipe',
     ],
-    price: '900\u00A0€',
+    price: '900 €',
     duration: 'Cadrage, 1 semaine',
-    note: 'Puis intégration au forfait, dès 5\u00A0000\u00A0€. Le cadrage est déduit si vous poursuivez.',
+    note: 'Puis intégration au forfait, dès 5 000 €. Le cadrage est déduit si vous poursuivez.',
     detailsHref: null,
   },
 ] as const
 export const offerDetailsLabel: string = 'Le détail'
 export const offersFootnotes: readonly string[] = [
-  'Agence ou studio\u00A0? Je prends aussi de la sous-traitance Flutter au forfait, en marque blanche.',
-  'Équipe de développeurs\u00A0? J’installe des workflows de développement par agents (Claude Code)\u00A0: règles projet, skills, revues automatisées.',
+  'Agence ou studio ? Je prends de la sous-traitance Flutter au forfait, en marque blanche, et je ne contacte jamais vos clients.',
+  'Vous recrutez un développeur Flutter ? J’évalue vos candidats : exercice relu, entretien technique d’une heure, avis écrit sous 48 h. 250 € par candidat.',
 ] as const
 
 // Work
 export const workTitle: string = 'Ce que j’ai construit.'
 export const workItems: readonly WorkItem[] = [
   {
-    period: '2024 — aujourd’hui',
-    title: 'App mobile de mobilité',
-    url: null,
-    role: 'Premier développeur, puis tech lead mobile',
-    description:
-      'Conçue et construite quasiment seul, l’app Flutter iOS et Android est utilisée chaque jour par 2\u00A0500 chauffeurs professionnels. J’en pilote aujourd’hui la refonte\u00A0: architecture modulaire, design system indépendant, CI/CD et tests de bout en bout.',
-    stack: ['Flutter', 'Dart', 'Riverpod', 'CI/CD', 'Maestro'],
-  },
-  {
     period: '2021 — 2024',
     title: 'Diseed',
     url: 'https://diseed.fr',
     role: 'Cofondateur et développeur',
     description:
-      '«\u00A0Le meilleur du pire\u00A0»\u00A0: une app sociale pour partager ses anecdotes, en français et en portugais du Brésil. J’ai conçu le produit, construit l’app et le back-end serverless, et mis des modèles de langage en production pour catégoriser les contenus, traduire d’une langue à l’autre et générer des images.',
+      '« Le meilleur du pire » : une app sociale pour partager ses anecdotes, en français et en portugais du Brésil. J’ai conçu le produit, construit l’app et le back-end serverless, et mis des modèles de langage en production pour catégoriser les contenus, traduire d’une langue à l’autre et générer des images.',
     stack: ['Flutter', 'Firebase', 'Cloud Functions', 'LLM'],
   },
   {
@@ -143,7 +142,7 @@ export const workItems: readonly WorkItem[] = [
     url: 'https://migrea.fr',
     role: 'Conception et développement',
     description:
-      'Une app migraine communautaire, en bêta ouverte sur iOS et Android\u00A0: un suivi simple même en pleine crise, une fenêtre de risque personnelle, et une contribution anonymisée à la recherche, avec l’accord de chacun. Des données de santé, donc le RGPD pris au sérieux dès la conception.',
+      'Une app migraine communautaire, en bêta ouverte sur iOS et Android : un suivi simple même en pleine crise, une fenêtre de risque personnelle, et une contribution anonymisée à la recherche, avec l’accord de chacun. Des données de santé, donc des règles d’accès Supabase écrites dès le premier jour.',
     stack: ['Flutter', 'Supabase', 'PostgreSQL', 'RGPD'],
   },
   {
@@ -152,7 +151,7 @@ export const workItems: readonly WorkItem[] = [
     url: 'https://lineupvote.app',
     role: 'Projet personnel',
     description:
-      'Pour préparer un festival entre amis\u00A0: chacun vote sur les artistes, le groupe obtient un classement commun en temps réel. Sans compte ni mot de passe, un lien d’invitation suffit.',
+      'Pour préparer un festival entre amis : chacun vote sur les artistes, le groupe obtient un classement commun en temps réel. Sans compte ni mot de passe, un lien d’invitation suffit.',
     stack: ['Flutter', 'Firebase', 'Temps réel'],
   },
   {
@@ -161,7 +160,7 @@ export const workItems: readonly WorkItem[] = [
     url: 'https://github.com/clemortel/flutter_product_factory',
     role: 'Auteur',
     description:
-      'Mon modèle de monorepo Flutter\u00A0: une CLI Dart génère apps et fonctionnalités, sur une architecture en couches indépendante du back-end. C’est la base dont je pars pour démarrer vite et proprement.',
+      'Un modèle de monorepo Flutter publié en open source : une CLI Dart génère apps et fonctionnalités, sur une architecture en couches indépendante du back-end.',
     stack: ['Flutter', 'Dart CLI', 'Melos', 'Riverpod'],
   },
 ] as const
@@ -170,49 +169,51 @@ export const workItems: readonly WorkItem[] = [
 export const methodTitle: string = 'Comment se passe une mission.'
 export const methodSteps: readonly MethodStep[] = [
   {
-    number: '01',
+    number: '1',
     title: 'Un appel de 30 minutes',
     description:
-      'Vous me présentez le produit et ce qui bloque. Je vous dis franchement si je suis la bonne personne, et sinon vers qui aller.',
+      'Vous me présentez l’app et ce qui bloque. Si ce n’est pas pour moi, je vous le dis et je vous oriente.',
   },
   {
-    number: '02',
-    title: 'Une proposition sous 48 heures',
+    number: '2',
+    title: 'Une proposition écrite sous 48 heures',
     description:
-      'Périmètre, jalons, prix fixe et calendrier, par écrit. Acompte de 30\u00A0% au démarrage, le solde à la livraison.',
+      'Périmètre, livrables, prix fixe et calendrier. Acompte de 50 % jusqu’à 2 000 €, de 30 % au-delà.',
   },
   {
-    number: '03',
-    title: 'Une démo chaque semaine',
+    number: '3',
+    title: 'Un travail asynchrone',
     description:
-      'Le code vit dans votre dépôt dès le premier jour. Vous voyez avancer le produit, pas un relevé d’heures.',
+      'Le code vit dans votre dépôt dès le premier jour, avec un point écrit chaque semaine. Je ne prends pas de mission qui demande une astreinte.',
   },
   {
-    number: '04',
+    number: '4',
     title: 'Une passation propre',
     description:
-      'Documentation, tests et déploiement automatisé\u00A0: votre équipe, ou la suivante, reprend sans moi.',
+      'Documentation, tests et déploiement automatisé : votre équipe, ou la suivante, reprend sans moi.',
   },
 ] as const
-export const aiNoteTitle: string = 'Et l’IA dans tout ça\u00A0?'
+export const aiNoteTitle: string = 'Les agents de code'
 export const aiNote: string =
-  'Je développe avec des agents de code au quotidien\u00A0: Claude Code, sessions en parallèle, règles et revues automatisées. Ils prennent la mécanique\u00A0; la conception, la relecture et la responsabilité restent les miennes. Chaque ligne livrée est relue et testée, et votre code ne passe dans aucun outil sans votre accord.'
+  'Je développe avec des agents de code (Claude Code) : ils prennent la mécanique, je garde la conception, la relecture et la responsabilité. Votre code et vos données ne passent dans aucun outil d’IA sans votre accord écrit.'
 
 // About
 export const aboutTitle: string =
-  'Développeur depuis 2019, ingénieur produit par goût.'
+  'Développeur depuis 2019, tech lead Flutter depuis 2024.'
 export const aboutParagraphs: readonly string[] = [
-  'Je m’appelle Clément. J’ai commencé par des applications web chez GRDF, puis au ministère de la Justice en alternance. En 2021, j’ai cofondé Diseed avec mon meilleur ami\u00A0: trois ans à tout faire nous-mêmes, du design au back-end, en passant par l’IA et les stores.',
-  'Depuis 2024, je suis le premier développeur, puis le tech lead mobile, d’une startup de mobilité. J’y ai appris à tenir une app dont des milliers de personnes dépendent pour travailler.',
-  'Ce qui me plaît\u00A0: prendre un produit flou, le rendre simple, et le livrer. Je préfère refuser une mission que la faire à moitié.',
+  'Je m’appelle Clément. J’ai commencé par des applications web chez GRDF, puis au ministère de la Justice en alternance. En 2021, j’ai cofondé Diseed avec mon meilleur ami : trois ans à tout faire nous-mêmes, du design au back-end, en passant par l’IA et les stores.',
+  'Depuis 2024, je suis tech lead mobile dans une startup parisienne. En parallèle, je prends une mission freelance à la fois, en dehors de son secteur.',
+  'Ce qui me plaît : reprendre une app que plus personne n’ose toucher et la remettre en état de marche.',
 ] as const
 export const photoAlt: string = 'Portrait de Clément Balanger'
+export const aboutTimelineLabel: string = 'Parcours'
+export const aboutSkillsLabel: string = 'Outils'
 
 export const timeline: readonly TimelineItem[] = [
   {
     period: '2024 —',
-    role: 'Premier développeur, puis tech lead mobile',
-    place: 'Startup de mobilité, Paris',
+    role: 'Tech lead mobile',
+    place: 'Startup, Paris',
   },
   {
     period: '2021 — 2024',
@@ -259,41 +260,36 @@ export const skillGroups: readonly SkillGroup[] = [
 export const faqTitle: string = 'Questions fréquentes.'
 export const faqItems: readonly FaqItem[] = [
   {
-    question: 'Vous travaillez au forfait ou à la journée\u00A0?',
+    question: 'Vous travaillez au forfait ou à la journée ?',
     answer:
-      'Au forfait, sur un périmètre écrit et un prix fixe. Si le besoin change en route, on en parle avant que je facture quoi que ce soit.',
+      'Au forfait, sur un périmètre écrit et un prix fixe. Si le besoin change en route, on chiffre l’écart par écrit avant d’aller plus loin.',
   },
   {
-    question: 'Quand pouvez-vous commencer\u00A0?',
+    question: 'Comment se passent les échanges ?',
     answer:
-      'Je prends une seule mission à la fois, pour la faire bien. Le calendrier est annoncé dans la proposition, et je m’y tiens.',
+      'Par écrit au fil de l’eau, et en visio le midi ou en fin de journée pour les points. Je ne prends pas de mission qui demande des réunions quotidiennes.',
   },
   {
-    question: 'Comment se passent les échanges\u00A0?',
+    question: 'Qu’en est-il de vos accès et de vos données ?',
     answer:
-      'À distance depuis Paris\u00A0: par écrit au fil de l’eau, en visio pour les points, le midi ou à 18\u00A0h\u00A030. Je peux venir sur place en Île-de-France pour le lancement.',
+      'J’accède à vos systèmes seulement avec une autorisation écrite et un accord de confidentialité, sur un environnement de test quand c’est possible. Je ne copie aucune donnée et je rends mes accès à la fin.',
   },
   {
-    question: 'À qui appartient le code\u00A0?',
+    question: 'À qui appartient le code ?',
     answer:
       'À vous. Il vit dans votre dépôt dès le premier jour, et les droits vous sont cédés au paiement complet.',
   },
   {
-    question: 'Vous ne faites que du Flutter\u00A0?',
+    question: 'Comment facturez-vous ?',
     answer:
-      'Non. Je fais aussi le back-end (Node.js, TypeScript, Firebase, Supabase, PostgreSQL) et le web. Flutter est simplement l’outil que je connais le mieux pour le mobile.',
-  },
-  {
-    question: 'Comment facturez-vous\u00A0?',
-    answer:
-      'En entrepreneur individuel (Clemiche Labs), en euros, TVA non applicable. Acompte de 30\u00A0% au démarrage, solde à la livraison.',
+      'En entrepreneur individuel (Clément Balanger EI), en euros, TVA non applicable selon l’article 293 B du CGI. Mes offres s’adressent uniquement aux professionnels.',
   },
 ] as const
 
 // Contact
-export const contactTitle: string = 'Parlez-moi de votre produit.'
+export const contactTitle: string = 'Parlez-moi de votre app.'
 export const contactSub: string =
-  'Trois lignes suffisent\u00A0: ce que fait votre produit, ce qui bloque, et votre échéance. Je réponds sous 24 heures, même pour dire non.'
+  'Trois lignes suffisent : ce que fait votre app, ce qui bloque, et votre échéance. Je réponds sous 24 heures ouvrées.'
 export const email: string = 'hello@clemichelabs.com'
 export const contactLinks: readonly ExternalLink[] = [
   {
@@ -308,23 +304,25 @@ export const formLabels: FormLabels = {
   email: 'Votre e-mail',
   message: 'Votre message',
   messagePlaceholder:
-    'Ce que fait votre produit, ce qui bloque, votre échéance.',
+    'Ce que fait votre app, ce qui bloque, votre échéance.',
   submit: 'Envoyer',
   sending: 'Envoi…',
   sentTitle: 'Message reçu.',
-  sentBody: 'Merci. Je vous réponds sous 24 heures.',
+  sentBody: 'Merci. Je vous réponds sous 24 heures ouvrées.',
   sendAnother: 'Envoyer un autre message',
   errorFallback:
-    'L’envoi a échoué. Écrivez-moi directement par e-mail, ça marche toujours.',
+    'L’envoi a échoué. Écrivez-moi directement par e-mail.',
+  privacyNote:
+    'Votre message sert uniquement à vous répondre. Il est conservé 12 mois au plus.',
+  privacyLinkLabel: 'Confidentialité',
 } as const
 
 // Footer
 export const footerIdentity: string =
-  'Clemiche Labs — Clément Balanger, entrepreneur individuel, Paris.'
+  'Clément Balanger EI (Clemiche Labs), Paris. Offres réservées aux professionnels.'
 export const footerCopyright: string = '© 2026 Clément Balanger'
 export const footerLinks: readonly NavLink[] = [
   { label: 'Mentions légales', href: '/legal' },
-  { label: 'Produits', href: '/pricing' },
   { label: 'Confidentialité', href: '/privacy' },
 ] as const
 export const themeToggleLabel: string = 'Changer de thème'

@@ -14,6 +14,27 @@
     ],
     "headers": [
       {
+        "source": "**",
+        "headers": [
+          {
+            "key": "X-Content-Type-Options",
+            "value": "nosniff"
+          },
+          {
+            "key": "X-Frame-Options",
+            "value": "DENY"
+          },
+          {
+            "key": "Referrer-Policy",
+            "value": "strict-origin-when-cross-origin"
+          },
+          {
+            "key": "Permissions-Policy",
+            "value": "camera=(), microphone=(), geolocation=()"
+          }
+        ]
+      },
+      {
         "source": "**/*.@(js|css)",
         "headers": [
           {
@@ -30,6 +51,33 @@
             "value": "public, max-age=86400"
           }
         ]
+      }
+    ],
+    "redirects": [
+      {
+        "source": "/scan-securite",
+        "destination": "/securite",
+        "type": 301
+      },
+      {
+        "source": "/pricing",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/solo-cto-os",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/terms",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/refunds",
+        "destination": "/",
+        "type": 301
       }
     ]
   }

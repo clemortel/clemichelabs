@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import {
-  heroAvailability,
   heroEyebrow,
-  heroFacts,
   heroIntro,
+  heroNotice,
+  heroNoticeLabel,
+  heroNoticeLink,
   heroPrimaryCta,
   heroSecondaryCta,
   heroTitleEmphasis,
@@ -12,45 +13,35 @@ import {
 </script>
 
 <template>
-  <section class="mx-auto max-w-content px-5 pb-16 pt-14 sm:px-8 md:pb-24 md:pt-24">
-    <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
-      <p class="label">{{ heroEyebrow }}</p>
-      <p class="label flex items-center gap-2 !text-ink dark:!text-ink-dark">
-        <span
-          class="inline-block h-1.5 w-1.5 rounded-full bg-accent dark:bg-accent-dark"
-          aria-hidden="true"
-        />
-        {{ heroAvailability }}
-      </p>
-    </div>
+  <section class="mx-auto max-w-content px-5 pb-14 pt-14 sm:px-8 md:pb-20 md:pt-20">
+    <p class="label">{{ heroEyebrow }}</p>
 
     <h1
-      class="mt-8 max-w-[19ch] font-serif text-[2.6rem] leading-[1.06] tracking-tight sm:text-6xl md:text-7xl"
+      class="mt-5 max-w-[24ch] text-4xl font-semibold leading-tight tracking-tight sm:text-5xl"
     >
       {{ heroTitleLead }}
-      <em class="text-accent dark:text-accent-dark">{{ heroTitleEmphasis }}</em>
+      <span class="text-accent dark:text-accent-dark">{{ heroTitleEmphasis }}</span>
     </h1>
 
-    <p class="mt-8 max-w-prose text-lg leading-relaxed text-soft">
+    <p class="mt-6 max-w-prose text-lg leading-relaxed text-soft">
       {{ heroIntro }}
     </p>
 
-    <div class="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
+    <div class="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4">
       <a href="#contact" class="button-primary">
         {{ heroPrimaryCta }} <span aria-hidden="true">→</span>
       </a>
       <a href="#offres" class="link text-sm">{{ heroSecondaryCta }}</a>
     </div>
 
-    <dl
-      class="mt-16 grid gap-8 border-t border-rule pt-8 dark:border-rule-dark sm:grid-cols-3 md:mt-24"
+    <aside
+      class="mt-12 max-w-prose rounded-md bg-surface p-5 text-sm leading-relaxed dark:bg-surface-dark"
     >
-      <div v-for="fact in heroFacts" :key="fact.value">
-        <dt class="font-serif text-4xl tracking-tight">{{ fact.value }}</dt>
-        <dd class="mt-2 max-w-[26ch] text-sm leading-relaxed text-soft">
-          {{ fact.label }}
-        </dd>
-      </div>
-    </dl>
+      <p class="font-semibold">{{ heroNoticeLabel }}</p>
+      <p class="mt-1">{{ heroNotice }}</p>
+      <NuxtLink :to="heroNoticeLink.href" class="link mt-2 inline-block">
+        {{ heroNoticeLink.label }} →
+      </NuxtLink>
+    </aside>
   </section>
 </template>

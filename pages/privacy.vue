@@ -2,11 +2,16 @@
 import { brandName } from '~/data/content'
 import { privacyContent } from '~/data/legal'
 
-const pageTitle: string = 'Privacy Policy'
+const pageTitle: string = 'Confidentialité'
 
 useHead({
   title: `${pageTitle} — ${brandName}`,
-  meta: [{ name: 'description', content: 'Privacy Policy for Clemiche Labs' }],
+  meta: [
+    {
+      name: 'description',
+      content: 'Données collectées par le formulaire de contact de clemichelabs.com.',
+    },
+  ],
 })
 </script>
 

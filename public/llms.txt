@@ -1,42 +1,43 @@
 # Clément Balanger — Clemiche Labs
 
-> Freelance product engineer and Flutter tech lead based in Paris, France.
-> Ships mobile and web apps to production, with AI features where they
-> help. Works on fixed-price engagements, one at a time. French and English.
+> Freelance Flutter tech lead based in Paris, France. Updates, secures and
+> moves forward Flutter apps that nobody has time to take over. Fixed-price,
+> asynchronous missions, one at a time, for businesses only. French and
+> English.
 
 ## Who
 
-- First developer, then mobile tech lead, of a mobility startup's Flutter
-  app used daily by 2,500 professional drivers (iOS and Android).
+- Developer since 2019; mobile tech lead at a Paris startup since 2024.
 - Co-founder of Diseed (2021–2024), a social app for sharing anecdotes in
   French and Brazilian Portuguese, with LLM features in production
   (content categorisation, translation, image generation).
-- Builder of Migrea (migraine tracking app, open beta) and LineUpVote
-  (festival group voting).
+- Builder of Migrea (migraine tracking app, open beta, Flutter + Supabase)
+  and LineUpVote (festival group voting).
 - Stack: Flutter, Dart, Node.js, TypeScript, Firebase, Supabase,
-  PostgreSQL, CI/CD, Claude Code and agent-based development.
+  PostgreSQL, CI/CD, Claude Code.
 
 ## Offers (fixed price, EUR, VAT not applicable)
 
-- Supabase or Firebase security scan: 590 €, 1 week. Access rules (RLS,
-  Firestore and Storage rules), auth, exposed keys, ranked findings with
-  fixes. Fits apps built quickly or with Lovable, Bolt or FlutterFlow.
-- Production-readiness audit: 1,500 €, 2 weeks. Flutter apps or
-  prototypes: architecture, performance, security, tests, CI, store
-  release, costed recovery plan. Credited against the follow-up work.
-- AI feature in your product: 900 € scoping, then integration from
-  5,000 €. Model choice, evaluation set, cost per request, production
-  integration with written acceptance criteria.
-- Also: white-label Flutter subcontracting for agencies; agent-based
-  development setup (Claude Code) for developer teams.
+- Flutter store update: 1,200 € per app (up to 25 dependencies), 2 weeks.
+  Target Android 16 (API 36) for Google Play, build with Xcode 26, move
+  from CocoaPods to Swift Package Manager, dependencies updated, test
+  builds submitted. Agencies: 3 apps for 3,000 €.
+- Production-readiness audit: 1,500 €, 2 weeks. Architecture,
+  performance, security, tests, CI, store release, costed recovery plan.
+- Supabase or Firebase hardening: 890 €, 2 weeks. Configuration review
+  (RLS, Firestore and Storage rules, auth, keys), fixes in your repo, then
+  re-check. Not a penetration test. Written authorisation required.
+- AI feature: 900 € scoping, then integration from 5,000 €.
+- Also: white-label Flutter subcontracting for agencies; technical
+  assessment of Flutter candidates, 250 € per candidate.
+
+## Pages
+
+- Flutter store update (French): https://clemichelabs.com/flutter-a-jour
+- Supabase or Firebase hardening (French): https://clemichelabs.com/securite
 
 ## Contact
 
 - Email: hello@clemichelabs.com
-- Site: https://clemichelabs.com
 - LinkedIn: https://www.linkedin.com/in/clementbalanger
 - GitHub: https://github.com/clemortel
-
-## Pages
-
-- Security scan offer (French): https://clemichelabs.com/scan-securite
