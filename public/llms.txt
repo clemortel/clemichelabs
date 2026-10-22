@@ -1,0 +1,42 @@
+# Clément Balanger — Clemiche Labs
+
+> Freelance product engineer and Flutter tech lead based in Paris, France.
+> Ships mobile and web apps to production, with AI features where they
+> help. Works on fixed-price engagements, one at a time. French and English.
+
+## Who
+
+- First developer, then mobile tech lead, of a mobility startup's Flutter
+  app used daily by 2,500 professional drivers (iOS and Android).
+- Co-founder of Diseed (2021–2024), a social app for sharing anecdotes in
+  French and Brazilian Portuguese, with LLM features in production
+  (content categorisation, translation, image generation).
+- Builder of Migrea (migraine tracking app, open beta) and LineUpVote
+  (festival group voting).
+- Stack: Flutter, Dart, Node.js, TypeScript, Firebase, Supabase,
+  PostgreSQL, CI/CD, Claude Code and agent-based development.
+
+## Offers (fixed price, EUR, VAT not applicable)
+
+- Supabase or Firebase security scan: 590 €, 1 week. Access rules (RLS,
+  Firestore and Storage rules), auth, exposed keys, ranked findings with
+  fixes. Fits apps built quickly or with Lovable, Bolt or FlutterFlow.
+- Production-readiness audit: 1,500 €, 2 weeks. Flutter apps or
+  prototypes: architecture, performance, security, tests, CI, store
+  release, costed recovery plan. Credited against the follow-up work.
+- AI feature in your product: 900 € scoping, then integration from
+  5,000 €. Model choice, evaluation set, cost per request, production
+  integration with written acceptance criteria.
+- Also: white-label Flutter subcontracting for agencies; agent-based
+  development setup (Claude Code) for developer teams.
+
+## Contact
+
+- Email: hello@clemichelabs.com
+- Site: https://clemichelabs.com
+- LinkedIn: https://www.linkedin.com/in/clementbalanger
+- GitHub: https://github.com/clemortel
+
+## Pages
+
+- Security scan offer (French): https://clemichelabs.com/scan-securite

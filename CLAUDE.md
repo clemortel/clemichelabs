@@ -1,6 +1,7 @@
 # ClemicheLabs – Portfolio Website
 
-> Nuxt 3 SSG site with Firebase Hosting + client-side Firestore contact form.
+> Freelance site of Clément Balanger (product engineer, Flutter + AI).
+> Nuxt 3 SSG on Firebase Hosting + client-side Firestore contact form.
 
 ---
 
@@ -16,34 +17,36 @@ Modules: `@nuxtjs/tailwindcss`, `@nuxtjs/color-mode`, `@nuxtjs/google-fonts`, `@
 
 ```
 clemichelabs/
-├── nuxt.config.ts                 # Modules, SEO head, color-mode, google-fonts
+├── nuxt.config.ts                 # Modules, SEO head (FR), color-mode, fonts
 ├── tailwind.config.ts             # Design tokens
 ├── app.vue                        # Root layout
 ├── pages/
-│   ├── index.vue                  # All 7 sections composed + JSON-LD
-│   └── legal.vue                  # Legal page
+│   ├── index.vue                  # Home: sections + JSON-LD (Person, offers)
+│   ├── legal|terms|privacy|refunds.vue  # Thin wrappers on LegalDocument
+│   ├── pricing.vue                # Paddle digital products
+│   └── solo-cto-os.vue
 ├── components/
-│   ├── NavBar.vue                 # Sticky nav, scroll links, theme toggle, mobile menu
+│   ├── PageShell.vue              # Header + main + footer
+│   ├── SiteHeader.vue             # Name, anchor nav, theme toggle
 │   ├── SiteFooter.vue
-│   ├── NeonButton.vue             # CTA with glow hover
-│   ├── SectionWrapper.vue         # Section container (title, subtitle, slot)
-│   ├── GradientBackground.vue     # Radial gradient bg
-│   ├── MotionFadeUp.vue           # CSS fade-up animation on scroll (SSR-safe)
-│   ├── sections/                  # Hero, Services, Portfolio, About, Process, Testimonials, Contact
-│   └── cards/                     # ServiceCard, ProjectCard, ProcessStepCard, TestimonialCard
+│   ├── SectionBlock.vue           # "01 — Label" column + serif title + slot
+│   ├── LegalDocument.vue          # Shared legal page layout
+│   ├── sections/                  # Hero, Offers, Work, Method, About, Faq, Contact
+│   └── cards/                     # OfferRow, WorkEntry
 ├── composables/
-│   ├── useScrollSpy.ts            # IntersectionObserver for active section
 │   └── useContactForm.ts          # Form state + client-side Firestore write
 ├── plugins/
 │   └── firebase.client.ts         # Firebase client SDK init (client-only)
 ├── data/
-│   └── content.ts                 # All marketing copy
+│   ├── content.ts                 # All home copy (French)
+│   ├── legal.ts                   # Legal, terms, privacy, refunds
+│   └── products.ts                # Paddle products
 ├── types/
 │   └── content.ts                 # TypeScript interfaces
 ├── assets/css/
-│   └── main.css                   # Base styles
+│   └── main.css                   # Tailwind entry + base + component classes
 └── public/
-    ├── favicon.png
+    ├── llms.txt                   # Plain summary for AI search engines
     ├── robots.txt
     └── images/
 ```
@@ -58,18 +61,20 @@ UI (Vue component) → composable → Firebase client SDK → Firestore
 
 ## Design System
 
-| Token | Tailwind class | Value |
-|-------|---------------|-------|
-| Primary | `text-primary`, `bg-primary` | `#00f2ff` |
-| Background Dark | `bg-bg-dark` | `#0f2223` |
-| Background Light | `bg-bg-light` | `#f5f8f8` |
-| Card Dark | `bg-card-dark` | `#162e2f` |
-| Text Muted | `text-text-muted` | `#8ba8a9` |
-| Font | `font-sans` | Space Grotesk |
-| Radii | `rounded-sm/md/lg` | 8/16/32px |
-| Glow | `shadow-neon` | cyan box-shadow |
+Editorial, text-first: paper background, ink text, one accent, no gradients,
+glows, glass cards or icon grids. It must not look AI-generated.
 
-Always use Tailwind design tokens from `tailwind.config.ts`. Never hardcode colors.
+| Token | Tailwind class | Light / Dark |
+|-------|---------------|-------|
+| Paper | `bg-paper` / `dark:bg-paper-dark` | `#f6f3ec` / `#141311` |
+| Ink | `text-ink` / `dark:text-ink-dark` | `#1c1b18` / `#ece8df` |
+| Muted | `text-soft` (component class) | `#6b665c` / `#9d978b` |
+| Rule | `border-rule` / `dark:border-rule-dark` | `#d9d2c3` / `#2e2b26` |
+| Accent | `text-accent` / `dark:text-accent-dark` | `#b33a0b` / `#f08a5d` |
+| Fonts | `font-serif` / `font-sans` / `font-mono` | Newsreader / IBM Plex Sans / IBM Plex Mono |
+
+Component classes in `main.css`: `.link`, `.label`, `.button-primary`,
+`.field`, `.text-soft`. Always use tokens; never hardcode colors.
 
 ---
 
@@ -77,12 +82,15 @@ Always use Tailwind design tokens from `tailwind.config.ts`. Never hardcode colo
 
 - Explicit types on all variables, parameters, and return types
 - Single quotes, no semicolons (handled by linter)
-- All marketing copy in `data/content.ts` (never inline strings)
+- All copy in `data/*.ts` (never inline strings); French typography uses
+  `\u00A0` before `: ; ? ! € %` and inside numbers
 - Responsive via Tailwind breakpoints: `sm:`, `md:`, `lg:`
 - Keep files ~200 lines; extract components when larger
 - Use `@nuxtjs/color-mode` for dark/light — never manual class toggling
-- Animations use `MotionFadeUp` component (CSS transitions + IntersectionObserver, SSR-safe)
-- Components use `pathPrefix: false` — no directory prefix needed (e.g. `<HeroSection>` not `<SectionsHeroSection>`)
+- No scroll animations; native `<details>` for the FAQ
+- Never name the employer (mobility startup) or show its logo until the
+  contract amendment allows it
+- Components use `pathPrefix: false` — no directory prefix needed
 
 ---
 

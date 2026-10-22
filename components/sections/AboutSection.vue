@@ -1,51 +1,67 @@
 <script setup lang="ts">
-import { founderName, founderTitle, founderBio, founderSkills } from '~/data/content'
+import {
+  aboutParagraphs,
+  aboutTitle,
+  photoAlt,
+  skillGroups,
+  timeline,
+} from '~/data/content'
 </script>
 
 <template>
-  <SectionWrapper
-    id="about"
-    title="About"
-    subtitle="The human behind the code."
-  >
-    <div class="grid items-start gap-12 md:grid-cols-2">
-      <!-- Photo -->
-      <MotionFadeUp>
-        <div class="overflow-hidden rounded-md">
-          <img
-            src="/images/photo_portrait.jpg"
-            :alt="founderName"
-            class="h-auto w-full object-cover object-top"
-            loading="lazy"
-          />
-        </div>
-      </MotionFadeUp>
-
-      <!-- Bio -->
-      <MotionFadeUp :delay="150">
-        <div>
-          <h3 class="mb-1 text-2xl font-bold text-gray-900 dark:text-white">
-            {{ founderName }}
-          </h3>
-          <p class="mb-6 text-sm font-medium text-primary">
-            {{ founderTitle }}
-          </p>
-          <p class="mb-8 whitespace-pre-line text-sm leading-relaxed text-text-muted-light dark:text-text-muted">
-            {{ founderBio }}
-          </p>
-
-          <!-- Skills -->
-          <div class="flex flex-wrap gap-2">
-            <span
-              v-for="skill in founderSkills"
-              :key="skill"
-              class="rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-medium text-primary"
-            >
-              {{ skill }}
-            </span>
-          </div>
-        </div>
-      </MotionFadeUp>
+  <SectionBlock id="a-propos" index="04" label="À propos" :title="aboutTitle">
+    <div class="grid gap-12 md:grid-cols-[1fr_15rem]">
+      <div class="max-w-prose space-y-5 leading-relaxed">
+        <p v-for="paragraph in aboutParagraphs" :key="paragraph">
+          {{ paragraph }}
+        </p>
+      </div>
+      <figure class="order-first md:order-none">
+        <NuxtImg
+          src="/images/photo_visage.jpg"
+          :alt="photoAlt"
+          width="240"
+          height="281"
+          class="w-40 rounded-sm grayscale-[35%] md:w-full"
+          loading="lazy"
+        />
+      </figure>
     </div>
-  </SectionWrapper>
+
+    <div class="mt-16 grid gap-12 md:grid-cols-2">
+      <div>
+        <h3 class="label mb-4">Parcours</h3>
+        <ul class="divide-y divide-rule text-sm dark:divide-rule-dark">
+          <li
+            v-for="item in timeline"
+            :key="item.period + item.place"
+            class="grid grid-cols-[6.5rem_1fr] gap-4 py-3"
+          >
+            <span class="font-mono text-xs leading-6 text-soft">
+              {{ item.period }}
+            </span>
+            <span>
+              {{ item.role }}
+              <span class="text-soft">· {{ item.place }}</span>
+            </span>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="label mb-4">Outils</h3>
+        <dl class="divide-y divide-rule text-sm dark:divide-rule-dark">
+          <div
+            v-for="group in skillGroups"
+            :key="group.label"
+            class="grid grid-cols-[6.5rem_1fr] gap-4 py-3"
+          >
+            <dt class="font-mono text-xs leading-6 text-soft">
+              {{ group.label }}
+            </dt>
+            <dd>{{ group.items.join(', ') }}</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </SectionBlock>
 </template>

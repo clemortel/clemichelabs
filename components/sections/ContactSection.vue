@@ -1,5 +1,11 @@
 <script setup lang="ts">
-import { contactHeadline, contactSub, email } from '~/data/content'
+import {
+  contactLinks,
+  contactSub,
+  contactTitle,
+  email,
+  formLabels,
+} from '~/data/content'
 
 const { status, errorMessage, submit, reset } = useContactForm()
 
@@ -24,93 +30,89 @@ function handleReset(): void {
 </script>
 
 <template>
-  <SectionWrapper
-    id="contact"
-    :title="contactHeadline"
-    :subtitle="contactSub"
-  >
-    <!-- Success state -->
-    <div
-      v-if="status === 'sent'"
-      class="mx-auto max-w-lg rounded-md border border-success/20 bg-success/10 p-8 text-center"
-    >
-      <Icon name="heroicons:check-circle" class="mx-auto mb-4 h-12 w-12 text-success" />
-      <h3 class="mb-2 text-xl font-bold text-gray-900 dark:text-white">
-        Message Sent!
-      </h3>
-      <p class="mb-6 text-sm text-text-muted-light dark:text-text-muted">
-        Thanks for reaching out. I'll get back to you within 24 hours.
-      </p>
-      <button
-        class="text-sm font-medium text-primary hover:underline"
-        @click="handleReset"
-      >
-        Send another message
-      </button>
-    </div>
-
-    <!-- Form -->
-    <form
-      v-else
-      class="mx-auto max-w-lg space-y-4"
-      @submit.prevent="handleSubmit"
-    >
-      <div>
-        <input
-          v-model="name"
-          type="text"
-          placeholder="Your name"
-          required
-          minlength="1"
-          maxlength="200"
-          class="w-full rounded-sm border border-black/10 bg-black/5 px-5 py-4 text-gray-900 placeholder-text-muted-light outline-none transition-colors focus:border-primary/50 dark:border-white/10 dark:bg-accent-dark dark:text-white dark:placeholder-text-muted dark:focus:border-primary/50"
-        />
-      </div>
-      <div>
-        <input
-          v-model="userEmail"
-          type="email"
-          placeholder="Your email"
-          required
-          maxlength="200"
-          class="w-full rounded-sm border border-black/10 bg-black/5 px-5 py-4 text-gray-900 placeholder-text-muted-light outline-none transition-colors focus:border-primary/50 dark:border-white/10 dark:bg-accent-dark dark:text-white dark:placeholder-text-muted dark:focus:border-primary/50"
-        />
-      </div>
-      <div>
-        <textarea
-          v-model="message"
-          placeholder="Tell us about your project..."
-          required
-          minlength="1"
-          maxlength="5000"
-          rows="5"
-          class="w-full resize-none rounded-sm border border-black/10 bg-black/5 px-5 py-4 text-gray-900 placeholder-text-muted-light outline-none transition-colors focus:border-primary/50 dark:border-white/10 dark:bg-accent-dark dark:text-white dark:placeholder-text-muted dark:focus:border-primary/50"
-        />
-      </div>
-
-      <!-- Error message -->
-      <p
-        v-if="status === 'error'"
-        class="text-sm text-error"
-      >
-        {{ errorMessage }}
-      </p>
-
-      <NeonButton
-        :disabled="status === 'sending'"
-        icon="heroicons:paper-airplane"
-        class="w-full justify-center"
-        @click="handleSubmit"
-      >
-        {{ status === 'sending' ? 'Sending...' : 'Send Message' }}
-      </NeonButton>
-
-      <p class="text-center text-xs text-text-muted-light dark:text-text-muted">
-        Or email us directly at
-        <a :href="`mailto:${email}`" class="text-primary hover:underline">
+  <SectionBlock id="contact" index="06" label="Contact" :title="contactTitle">
+    <div class="grid gap-14 md:grid-cols-[1fr_1.1fr]">
+      <div class="max-w-prose">
+        <p class="leading-relaxed text-soft">{{ contactSub }}</p>
+        <a
+          :href="`mailto:${email}`"
+          class="link mt-8 inline-block font-serif text-2xl md:text-3xl"
+        >
           {{ email }}
         </a>
-      </p>
-    </form>
-  </SectionWrapper>
+        <ul class="mt-8 flex gap-6 text-sm">
+          <li v-for="item in contactLinks" :key="item.href">
+            <a :href="item.href" class="link" target="_blank" rel="noopener">
+              {{ item.label }} ↗
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div v-if="status === 'sent'" class="border-l-2 border-success pl-6">
+        <p class="font-serif text-2xl">{{ formLabels.sentTitle }}</p>
+        <p class="mt-2 text-soft">{{ formLabels.sentBody }}</p>
+        <button type="button" class="link mt-6 text-sm" @click="handleReset">
+          {{ formLabels.sendAnother }}
+        </button>
+      </div>
+
+      <form v-else class="space-y-5" @submit.prevent="handleSubmit">
+        <div>
+          <label for="contact-name" class="label mb-2 block">
+            {{ formLabels.name }}
+          </label>
+          <input
+            id="contact-name"
+            v-model="name"
+            type="text"
+            autocomplete="name"
+            required
+            maxlength="200"
+            class="field"
+          />
+        </div>
+        <div>
+          <label for="contact-email" class="label mb-2 block">
+            {{ formLabels.email }}
+          </label>
+          <input
+            id="contact-email"
+            v-model="userEmail"
+            type="email"
+            autocomplete="email"
+            required
+            maxlength="200"
+            class="field"
+          />
+        </div>
+        <div>
+          <label for="contact-message" class="label mb-2 block">
+            {{ formLabels.message }}
+          </label>
+          <textarea
+            id="contact-message"
+            v-model="message"
+            :placeholder="formLabels.messagePlaceholder"
+            required
+            maxlength="5000"
+            rows="5"
+            class="field resize-y"
+          />
+        </div>
+
+        <p v-if="status === 'error'" class="text-sm text-error" role="alert">
+          {{ errorMessage || formLabels.errorFallback }}
+        </p>
+
+        <button
+          type="submit"
+          class="button-primary disabled:opacity-60"
+          :disabled="status === 'sending'"
+        >
+          {{ status === 'sending' ? formLabels.sending : formLabels.submit }}
+        </button>
+      </form>
+    </div>
+  </SectionBlock>
 </template>

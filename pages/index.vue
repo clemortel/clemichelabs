@@ -1,13 +1,26 @@
 <script setup lang="ts">
-import { navItems } from '~/data/content'
+import {
+  email,
+  offers,
+  personName,
+  siteDescription,
+  siteUrl,
+} from '~/data/content'
+import type { OfferItem } from '~/types/content'
 
-const sectionIds: readonly string[] = [
-  'hero',
-  ...navItems.map((item: string) => item.toLowerCase()),
-]
-const activeSection: Ref<string> = useScrollSpy(sectionIds)
+interface OfferSchema {
+  readonly '@type': 'Offer'
+  readonly name: string
+  readonly description: string
+}
 
-provide('activeSection', activeSection)
+const offerSchemas: readonly OfferSchema[] = offers.map(
+  (offer: OfferItem): OfferSchema => ({
+    '@type': 'Offer',
+    name: offer.title,
+    description: `${offer.description} ${offer.price}, ${offer.duration}.`,
+  })
+)
 
 useHead({
   script: [
@@ -15,27 +28,44 @@ useHead({
       type: 'application/ld+json',
       innerHTML: JSON.stringify({
         '@context': 'https://schema.org',
-        '@type': 'ProfessionalService',
-        name: 'ClemicheLabs',
-        description:
-          'Paris-based micro-SaaS studio & fractional CTO. We build weird but profitable products.',
-        url: 'https://clemichelabs.com',
-        email: 'hello@clemichelabs.com',
-        founder: {
-          '@type': 'Person',
-          name: 'Clement Balanger',
-          jobTitle: 'Founder & CTO',
-        },
-        address: {
-          '@type': 'PostalAddress',
-          addressLocality: 'Paris',
-          addressCountry: 'FR',
-        },
-        areaServed: 'Worldwide',
-        serviceType: [
-          'Fractional CTO',
-          'Micro-SaaS Development',
-          'AI & Automation Systems',
+        '@graph': [
+          {
+            '@type': 'Person',
+            '@id': `${siteUrl}/#clement`,
+            name: personName,
+            jobTitle: 'Ingénieur produit, tech lead Flutter',
+            url: siteUrl,
+            email: `mailto:${email}`,
+            image: `${siteUrl}/images/photo_visage.jpg`,
+            address: {
+              '@type': 'PostalAddress',
+              addressLocality: 'Paris',
+              addressCountry: 'FR',
+            },
+            knowsAbout: [
+              'Flutter',
+              'Dart',
+              'Supabase',
+              'Firebase',
+              'Node.js',
+              'TypeScript',
+              'LLM integration',
+              'Claude Code',
+            ],
+            sameAs: [
+              'https://www.linkedin.com/in/clementbalanger',
+              'https://github.com/clemortel',
+            ],
+          },
+          {
+            '@type': 'ProfessionalService',
+            name: 'Clemiche Labs',
+            description: siteDescription,
+            url: siteUrl,
+            founder: { '@id': `${siteUrl}/#clement` },
+            areaServed: ['FR', 'EU'],
+            makesOffer: offerSchemas,
+          },
         ],
       }),
     },
@@ -44,17 +74,13 @@ useHead({
 </script>
 
 <template>
-  <GradientBackground>
-    <NavBar />
-    <main>
-      <HeroSection />
-      <ServicesSection />
-      <PortfolioSection />
-      <AboutSection />
-      <ProcessSection />
-      <TestimonialsSection />
-      <ContactSection />
-    </main>
-    <SiteFooter />
-  </GradientBackground>
+  <PageShell>
+    <HeroSection />
+    <OffersSection />
+    <WorkSection />
+    <MethodSection />
+    <AboutSection />
+    <FaqSection />
+    <ContactSection />
+  </PageShell>
 </template>

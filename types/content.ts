@@ -1,33 +1,72 @@
-export interface StatItem {
+export interface NavLink {
+  readonly label: string
+  readonly href: string
+}
+
+export interface HeroFact {
   readonly value: string
   readonly label: string
 }
 
-export interface ServiceItem {
-  readonly icon: string
+export interface OfferItem {
+  readonly id: string
   readonly title: string
+  readonly forWho: string
   readonly description: string
-  readonly features: readonly string[]
+  readonly deliverables: readonly string[]
+  readonly price: string
+  readonly duration: string
+  readonly note: string | null
+  readonly detailsHref: string | null
 }
 
-export interface ProjectItem {
+export interface WorkItem {
+  readonly period: string
   readonly title: string
   readonly url: string | null
+  readonly role: string
   readonly description: string
-  readonly tags: readonly string[]
-  readonly status: 'Live' | 'Building'
+  readonly stack: readonly string[]
 }
 
-export interface ProcessStep {
+export interface MethodStep {
   readonly number: string
   readonly title: string
   readonly description: string
 }
 
-export interface TestimonialItem {
-  readonly quote: string
-  readonly author: string
+export interface TimelineItem {
+  readonly period: string
   readonly role: string
+  readonly place: string
+}
+
+export interface SkillGroup {
+  readonly label: string
+  readonly items: readonly string[]
+}
+
+export interface FaqItem {
+  readonly question: string
+  readonly answer: string
+}
+
+export interface ExternalLink {
+  readonly label: string
+  readonly href: string
+}
+
+export interface FormLabels {
+  readonly name: string
+  readonly email: string
+  readonly message: string
+  readonly messagePlaceholder: string
+  readonly submit: string
+  readonly sending: string
+  readonly sentTitle: string
+  readonly sentBody: string
+  readonly sendAnother: string
+  readonly errorFallback: string
 }
 
 export interface LegalSection {
