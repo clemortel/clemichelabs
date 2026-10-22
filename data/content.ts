@@ -15,8 +15,6 @@ export const brandName: string = 'Clemiche Labs'
 export const personName: string = 'Clément Balanger'
 export const siteUrl: string = 'https://clemichelabs.com'
 
-export const siteTitle: string =
-  'Clément Balanger — Ingénieur produit freelance, Flutter et IA, Paris'
 export const siteDescription: string =
   'Ingénieur produit et tech lead Flutter à Paris. Scan sécurité Supabase ou Firebase, audit prêt pour la production, fonctionnalités IA\u00A0: au forfait, une mission à la fois.'
 
@@ -312,7 +310,6 @@ export const formLabels: FormLabels = {
   sentTitle: 'Message reçu.',
   sentBody: 'Merci. Je vous réponds sous 24 heures.',
   sendAnother: 'Envoyer un autre message',
-  orEmail: 'Ou directement par e-mail\u00A0:',
   errorFallback:
     'L’envoi a échoué. Écrivez-moi directement par e-mail, ça marche toujours.',
 } as const

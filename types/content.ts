@@ -65,7 +65,6 @@ export interface FormLabels {
   readonly sentTitle: string
   readonly sentBody: string
   readonly sendAnother: string
-  readonly orEmail: string
   readonly errorFallback: string
 }
 
