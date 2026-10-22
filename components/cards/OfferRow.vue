@@ -12,7 +12,7 @@ defineProps<Props>()
 <template>
   <article
     :id="`offre-${offer.id}`"
-    class="grid gap-6 border-t border-rule py-10 first:border-t-0 first:pt-0 dark:border-rule-dark md:grid-cols-[1fr_11rem] md:gap-12"
+    class="grid scroll-mt-16 gap-6 border-t border-rule py-10 first:border-t-0 first:pt-0 dark:border-rule-dark md:grid-cols-[1fr_11rem] md:gap-12"
   >
     <div class="max-w-prose">
       <h3 class="text-xl font-semibold tracking-tight md:text-2xl">

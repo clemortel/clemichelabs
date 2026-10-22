@@ -10,7 +10,7 @@ export const storesLanding: OfferLandingContent = {
   intro:
     'Les stores ont relevé leurs exigences en 2026. Une app qui n’a pas suivi ne peut plus publier de correctif. Je la remets à niveau, au forfait, sans toucher à ce qui marche.',
   cta: 'Demander une mise à jour',
-  mailSubject: 'Mise à jour Flutter',
+  contactTopic: 'Mise à jour Flutter',
   priceLine:
     '1 200 € par app jusqu’à 25 dépendances, TVA non applicable. Agences : 3 apps pour 3 000 €.',
   problemTitle: 'Ce qui a changé cette année.',
@@ -109,7 +109,7 @@ export const securiteLanding: OfferLandingContent = {
   intro:
     'Les outils gratuits vous disent qu’une règle manque. Je relis la configuration, je corrige dans votre dépôt, puis je vérifie que les données sont vraiment fermées.',
   cta: 'Demander une sécurisation',
-  mailSubject: 'Sécurisation Supabase ou Firebase',
+  contactTopic: 'Sécurisation Supabase ou Firebase',
   priceLine:
     '890 €, TVA non applicable. Acompte de 50 % à la commande, solde à la livraison.',
   problemTitle: 'Le problème.',

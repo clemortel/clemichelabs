@@ -7,6 +7,7 @@ interface ContactPayload {
   readonly name: string
   readonly email: string
   readonly message: string
+  readonly topic: string | null
 }
 
 interface UseContactFormReturn {
@@ -34,6 +35,7 @@ export function useContactForm(): UseContactFormReturn {
         name: payload.name,
         email: payload.email,
         message: payload.message,
+        topic: payload.topic,
         createdAt: new Date(),
       })
 
