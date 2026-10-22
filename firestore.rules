@@ -12,7 +12,13 @@ service cloud.firestore {
         && request.resource.data.email.size() > 0
         && request.resource.data.email.size() < 200
         && request.resource.data.message.size() > 0
-        && request.resource.data.message.size() < 5000;
+        && request.resource.data.message.size() < 5000
+        // topic: the offer page, null from the home page. Absent from
+        // clients cached before the field existed, so absence must pass.
+        && (!('topic' in request.resource.data)
+          || request.resource.data.topic == null
+          || (request.resource.data.topic is string
+            && request.resource.data.topic.size() < 200));
       allow read, update, delete: if false;
     }
 
