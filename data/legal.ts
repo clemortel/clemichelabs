@@ -31,7 +31,7 @@ export const legalSections: readonly LegalSection[] = [
 export const privacyContent: readonly LegalSection[] = [
   {
     title: 'Ce qui est collecté',
-    body: 'Uniquement ce que vous écrivez dans le formulaire de contact : votre nom, votre e-mail et votre message. Ce site n’utilise ni cookie publicitaire, ni outil de mesure d’audience, ni pixel de suivi.',
+    body: 'Uniquement ce que vous écrivez dans le formulaire de contact : votre nom, votre e-mail et votre message, ainsi que la page d’offre depuis laquelle vous écrivez. Ce site n’utilise ni cookie publicitaire, ni outil de mesure d’audience, ni pixel de suivi.',
   },
   {
     title: 'Pourquoi',

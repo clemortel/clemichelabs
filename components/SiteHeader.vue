@@ -14,7 +14,11 @@ function toggleTheme(): void {
 </script>
 
 <template>
-  <header class="border-b border-rule dark:border-rule-dark">
+  <!-- Sticky, 64px tall: anchor targets (SectionBlock, OfferRow) use
+       scroll-mt-16 to land below it. Change both together. -->
+  <header
+    class="sticky top-0 z-10 border-b border-rule bg-paper dark:border-rule-dark dark:bg-paper-dark"
+  >
     <div
       class="mx-auto flex max-w-content items-center justify-between gap-6 px-5 py-5 sm:px-8"
     >

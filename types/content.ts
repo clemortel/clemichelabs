@@ -80,7 +80,8 @@ export interface OfferLandingContent {
   readonly headline: string
   readonly intro: string
   readonly cta: string
-  readonly mailSubject: string
+  // Saved with the contact form message: says which offer page it came from.
+  readonly contactTopic: string
   readonly priceLine: string
   readonly problemTitle: string
   readonly problem: readonly string[]

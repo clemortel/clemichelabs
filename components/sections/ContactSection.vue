@@ -7,6 +7,14 @@ import {
   formLabels,
 } from '~/data/content'
 
+interface Props {
+  topic?: string | null
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  topic: null,
+})
+
 const { status, errorMessage, submit, reset } = useContactForm()
 
 const name: Ref<string> = ref('')
@@ -18,6 +26,7 @@ async function handleSubmit(): Promise<void> {
     name: name.value,
     email: userEmail.value,
     message: message.value,
+    topic: props.topic,
   })
 }
 

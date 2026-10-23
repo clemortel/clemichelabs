@@ -12,7 +12,7 @@ withDefaults(defineProps<Props>(), {
 <template>
   <section
     :id="id"
-    class="scroll-mt-4 border-t border-rule dark:border-rule-dark"
+    class="scroll-mt-16 border-t border-rule dark:border-rule-dark"
   >
     <div class="mx-auto max-w-content px-5 py-14 sm:px-8 md:py-20">
       <h2

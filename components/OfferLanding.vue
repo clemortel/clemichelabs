@@ -1,14 +1,12 @@
 <script setup lang="ts">
 import type { OfferLandingContent } from '~/types/content'
-import { email, siteUrl } from '~/data/content'
+import { siteUrl } from '~/data/content'
 
 interface Props {
   content: OfferLandingContent
 }
 
 const props = defineProps<Props>()
-
-const mailHref: string = `mailto:${email}?subject=${encodeURIComponent(props.content.mailSubject)}`
 
 useHead({
   title: props.content.metaTitle,
@@ -34,7 +32,9 @@ useHead({
         {{ content.intro }}
       </p>
       <div class="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4">
-        <a :href="mailHref" class="button-primary">
+        <!-- Not a mailto: it does nothing for visitors without a desktop
+             mail client, which is most webmail users. -->
+        <a href="#contact" class="button-primary">
           {{ content.cta }} <span aria-hidden="true">→</span>
         </a>
         <p class="text-sm text-soft">{{ content.priceLine }}</p>
@@ -93,7 +93,7 @@ useHead({
         </li>
       </ol>
       <div class="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4">
-        <a :href="mailHref" class="button-primary">
+        <a href="#contact" class="button-primary">
           {{ content.cta }} <span aria-hidden="true">→</span>
         </a>
         <NuxtLink to="/#offres" class="link text-sm">
@@ -101,5 +101,7 @@ useHead({
         </NuxtLink>
       </div>
     </SectionBlock>
+
+    <ContactSection :topic="content.contactTopic" />
   </PageShell>
 </template>
